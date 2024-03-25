@@ -1,0 +1,23 @@
+---
+title: "Pre-workshop Instructions"
+---
+
+Prior to the workshop please check you have the required software and accounts.
+
+## Required Software
+
+-   [**Quarto**](https://quarto.org/docs/download/): latest release
+
+-   **One** of the following IDEs:
+
+    -   [**RStudio**](https://posit.co/download/rstudio-desktop/)
+
+    -   [**VS Code**](https://code.visualstudio.com/download) and the [VS Code Quarto Extension](https://marketplace.visualstudio.com/items?itemName=quarto.quarto)
+
+## Required Accounts
+
+To publish your website you'll need an account on one of Quarto's publishing venues:
+
+-   **(Recommended)** [Quarto Pub](https://quartopub.com/sign-up)
+
+-   [GitHub](https://github.com) only **if you are already** a Git/GitHub user
