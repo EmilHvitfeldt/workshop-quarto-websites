@@ -10,4 +10,461 @@ echo: false
 code-line-numbers: false
 ---
 
-# CSS
+# CSS / SCSS
+
+## what is CSS
+
+TODO: add an image of what an unstyled website would look like
+
+## HTML syntax in 5 minutes
+
+HTML is built on tags, `<html></html>` and `<div></div>`. Can be nested
+
+- `html`
+- `head`
+- `body`
+
+TODO: write basic website
+
+## HTML head
+
+contains meta information
+
+style sheets
+
+and sometimes scripts (mostly javascript)
+
+mostly boilerplate
+
+You will not need to modify this as Quarto does this for you
+
+## HTML body
+
+Contains everything else
+
+## Common HTML tags
+
+Headers
+
+`h1`, `h2`, `h3`, `h4`, `h5`, `h6`
+
+Paragraph
+
+`p`
+
+links
+
+`a`
+
+## html attributes
+
+Classes and ids
+
+`<h1 class="title" id="special-title">`
+
+Images
+
+`<img src="img_girl.jpg">`
+
+## Where is the code?
+
+- inline style
+- style block
+- style.css
+
+## In its simplest form:
+
+- selectors
+
+What needs to be styled
+
+- Attributes
+
+How it should be styled
+
+## Selectors
+
+by tags
+
+```css
+h1 {
+
+}
+```
+
+by class
+
+```css
+.important {
+
+}
+```
+
+by id
+
+```css
+#title-text {
+
+}
+```
+
+::: footer
+https://www.w3schools.com/cssref/css_selectors.php
+:::
+
+## Combining selectors
+
+`h1, h2` - All `h1` and all `h1`
+
+Useful to apply styles to all headers
+
+`h1, h2, h3, h4, h5, h6`
+
+`h1 h2` all `h2` inside `h1`
+
+`.class > h2` all `h2` 1 level deep in `.class`
+
+`h2.class` is all `h2` elements with `.class` classes
+
+## Combining selectors
+
+Simpler is "better"
+
+::: footer
+https://www.w3schools.com/cssref/css_selectors.php
+:::
+
+## Selectors references
+
+<https://www.w3schools.com/cssref/css_selectors.php>
+
+<https://www.w3schools.com/css/css_selectors.asp>
+
+<https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors> 
+
+<https://www.freecodecamp.org/news/css-selectors-cheat-sheet-for-beginners/>
+
+<https://www.w3.org/TR/CSS21/selector.html%23id-selectors>
+
+## Pseudo-classes
+
+Modifies existing classes
+
+### User action
+
+- `:hover`
+- `:active`
+
+```css
+a.navbar:hover {
+  color: blue;
+}
+
+a.navbar:active {
+  color: darkblue;
+}
+```
+
+::: footer
+<https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes>
+:::
+
+## Pseudo-classes - Tree bases
+
+Can do math to style only some elements
+
+- `:first-child`
+- `:nth-of-type`
+
+```css
+p:first-child {
+  border: 2px solid blue;
+}
+
+p:nth-of-type(2n+1) {
+  border: 2px solid orange;
+}
+```
+
+::: footer
+<https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes>
+:::
+
+## Pseudo-classes - Fancy selectors
+
+Outside scope, but shows what can be done if you care to explore it
+
+- `:has()`
+
+```css
+h1:has(+ h2) {
+  margin-bottom: 0.25rem;
+}
+```
+
+> if `h1` has a sibling `h2` then set the bottom margin of `h1` to `0.25rem`
+
+```css
+.card-list:has(.card:hover) .card:not(:hover) {
+  filter: blur(4px)
+}
+```
+
+> When the container has a child card hovered, select all the cards that aren’t hovered.
+
+::: footer
+<https://bejamas.io/blog/learn-css-has-selector-by-examples-top-use-cases/>
+:::
+
+
+
+
+## Cascading
+
+> Stylesheets cascade — at a very simple level, this means that the origin, the cascade layer, and the order of CSS rules matter. When two rules from the same cascade layer apply and both have **equal specificity**, the one that is **defined last** in the stylesheet is the one that will be used.
+
+`h1` looses to `h1.title-class` because `h1.title-class` is more specific
+
+<https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance>
+
+## Attributes
+
+How should stuff look
+
+- how things look
+    - colors
+    - sizes
+    - border lines
+
+- layout
+
+## Layout
+
+- Content - The content of the box, where text and images appear
+- Padding - Clears an area around the content. The padding is transparent
+- Border - A border that goes around the padding and content
+- Margin - Clears an area outside the border. The margin is transparent
+
+![](images/box-model.png)
+
+## Layout - content
+
+set using `height` and `width`
+
+Values are [lengths](https://developer.mozilla.org/en-US/docs/Web/CSS/length) or [percentages](https://developer.mozilla.org/en-US/docs/Web/CSS/percentage).
+
+
+## Layout - padding
+
+set with `padding` or `padding-bottom`, `padding-left`, `padding-right`, or `padding-top`
+
+Values are [lengths](https://developer.mozilla.org/en-US/docs/Web/CSS/length) or [percentages](https://developer.mozilla.org/en-US/docs/Web/CSS/percentage).
+
+`rem` is one of the nice sizes because it is relative to the base font size
+
+::: footer
+<https://www.w3schools.com/css/css_padding.asp>
+:::
+
+## Layout - padding
+
+Following are equivalent 
+
+::: {.columns}
+::: {.column}
+```css
+h1 {
+  padding: 10px;
+}
+```
+:::
+
+::: {.column}
+```css
+h1 {
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  }
+```
+:::
+:::
+
+## Layout - padding
+
+Following are equivalent 
+
+::: {.columns}
+::: {.column}
+```css
+h1 {
+  padding: 10px 20px;
+}
+```
+:::
+
+::: {.column}
+```css
+h1 {
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  }
+```
+:::
+:::
+
+## Layout - padding
+
+Following are equivalent 
+
+::: {.columns}
+::: {.column}
+```css
+h1 {
+  padding: 10px 20px 30px;
+}
+```
+:::
+
+::: {.column}
+```css
+h1 {
+  padding-bottom: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  }
+```
+:::
+:::
+
+## Layout - padding
+
+Following are equivalent (clock-wise)
+
+::: {.columns}
+::: {.column}
+```css
+h1 {
+  padding: 10px 20px 30px 40px;
+}
+```
+:::
+
+::: {.column}
+```css
+h1 {
+  padding-bottom: 30px;
+  padding-left: 40px;
+  padding-right: 20px;
+  padding-top: 10px;
+  }
+```
+:::
+:::
+
+## Layout - border
+
+Are styled as
+
+::: {.columns}
+::: {.column}
+```css
+h2 {
+  border: 2px solid #32a1ce;
+}
+```
+:::
+
+::: {.column}
+```css
+h2 {
+  border-color: #32a1ce;
+  border-style: solid;
+  border-width: 2px;
+}
+```
+:::
+:::
+
+::: footer
+<https://developer.mozilla.org/en-US/docs/Web/CSS/border>
+:::
+
+## Layout - Margin
+
+works the same as padding
+
+::: {.columns}
+::: {.column}
+```css
+h1 {
+  margin: 10px 20px 30px;
+}
+```
+:::
+
+::: {.column}
+```css
+h1 {
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  }
+```
+:::
+:::
+
+## Layout demo
+
+TODO: Make a thing where we can modify values and see them in action
+
+## CSS grid
+
+Slightly outside scope, but is useful to know that it exists
+
+Elements are styled as columns and rows
+
+TODO: add image
+
+[A complete Guide to CSS Grid](https://css-tricks.com/snippets/css/complete-guide-grid/)
+
+[CSS Grid Generator](https://cssgrid-generator.netlify.app/)
+
+## CSS flexbox
+
+Slightly outside scope, but is useful to know that it exists
+
+> A flex container expands items to fill available free space or shrinks them to prevent overflow.
+
+[A complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+## Absolute positioning
+
+Setting `position: relative;` to parent and `position: absolute;` to child to specify location using `top`, `left`, `right`, and `bottom`
+
+Can be nice to use, but can be an anti-pattern if used too much
+
+## Centering in CSS
+
+A common joke in programming
+
+Has been solved for a while
+
+<http://howtocenterincss.com/>
+
+## What is SCSS
+
+## Design principles 
+
+## Choosing colors
+
+## Choosing fonts
+
+## Maintaining accessibility
+
+## Custom themes & header styling
