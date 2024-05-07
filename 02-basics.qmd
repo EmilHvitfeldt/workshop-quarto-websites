@@ -10,4 +10,95 @@ echo: false
 code-line-numbers: false
 ---
 
-# Quarto Basics
+# Website Basics
+
+## Getting Started
+
+Demo:
+
+``` {.bash filename="Terminal"}
+quarto use { template }
+```
+
+Include visual summary of prompts in slides.
+
+## Workflow
+
+Edit. Save. Preview.
+
+RStudio: Render button
+
+VS Code + Quarto Extension: Preview button
+
+Quarto Preview Terminal: `quarto preview`
+
+Keyboard Shortcut
+
+## Your Turn {.exercise}
+
+Get the starter template
+
+Open `index.qmd`
+
+Preview
+
+Edit `title` and `subtitle` in the `index.qmd` YAML to reflect your site
+
+Preview
+
+What else is in `index.qmd`? Can you match the contents of `index.qmd` with contents of the webpage?
+
+## Page Structure
+
+YAML HEADER 
+
+Content (could include code) 
+
+Use Visual Editor
+
+## About Pages
+
+Special pages controlled by `about` key in YAML.
+
+Diagram of parts of page controlled by `about` keys.
+
+Overview of keys.
+
+## Your Turn {.exercise}
+
+Edit the content in `index.qmd` to reflect your site. Use the visual editor.
+
+Try different templates and pick one.
+
+Edit the links to point at your own profiles, or add different links.
+
+Experiment with `image-shape`.
+
+## `image`
+
+Social Cards, about template.
+
+Use relative file path.
+
+Debugging.
+
+## Your Turn {.exercise}
+
+Replace the image with one that reflects you or your site.
+
+## Website Structure
+
+`index.qmd` -\> `index.html` Special role of `index.qmd`
+
+`_quarto.yml` -\> Controls site properties, image of labelled page here with things that this file controls (i.e.) elements that you couldn't chance in `index.qmd`
+
+`_site/` after preview/render everything needed to serve the site.
+
+## Drafts (somewhere, maybe not here)
+
+Our goal, is that you have a site that you feel like you "own".
+
+We've provided some content to help you learn. We've marked as drafts and set draft-mode. 
+
+Anything marked draft won't show up in your published website (but will in local previews).
+
