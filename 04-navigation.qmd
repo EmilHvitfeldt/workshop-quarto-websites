@@ -11,3 +11,214 @@ code-line-numbers: false
 ---
 
 # Navigation
+
+General Outline:
+
+- Adding a page, and giving people a way to find it
+- General website structure
+- Top navigation bar `navbar`
+
+- Navigation approaches
+- Sidebar navigation
+- Hybrid navigation
+
+## Let's Add a Page
+
+Demo: creating new page file, add some content, link from nav
+
+Now: Dig into details
+
+## Adding Pages
+
+Two decisions: 
+
+1. **Structure** Where will it live in your website project?
+2. **Navigation** How will people discover it on your website?
+
+## Project structure determines URLs
+
+:::: {.columns}
+
+::: {.column width="40%"}
+File location
+
+`about.qmd`
+
+`reports/air-quality.qmd`
+:::
+
+::: {.column width="60%"}
+URL 
+
+`{ site url }/about.html`  
+
+`{ site url }/reports/air-quality.html`  
+:::
+
+The file path becomes the URL path 
+
+::::
+
+## Project structure determines URLs
+
+:::: {.columns}
+
+::: {.column width="40%"}
+File location
+
+`index.qmd`
+
+`reports/index.qmd`
+:::
+
+::: {.column width="60%"}
+URL 
+
+`{ site url }`
+
+`{ site url }/reports/`
+:::
+
+::::
+
+Files called `index.qmd` (or `.md`, or `.ipynb`) can be accessed from the site or directory root.
+
+## Project structure determines URLs
+
+:::: {.columns}
+
+::: {.column width="40%"}
+File location
+
+`data/monthly.csv`
+
+`reports/air-quality.qmd` with `format: pdf`
+:::
+
+::: {.column width="60%"}
+URL 
+
+`{ site url }/data/monthly.csv`
+
+`{ site url }/reports/air-quality.pdf`
+:::
+
+::::
+
+You aren't limited to HTML files
+
+## Linking to a page: Page Text
+
+`Learn more on the [About page](about.qmd)` 
+
+Path relative to file location. Use `/` to start from site root.
+
+* Relative path: move your website project around and links won't break
+* `.qmd`: warnings from Quarto if file isn't found 
+
+## Linking to a page: Navigation Item
+
+In nav: 
+
+```{.yaml filename="_quarto.yml"}
+website:
+  navbar:
+    left: 
+      - about.qmd
+```
+
+Or 
+
+```{.yaml}
+- href:
+  text:
+  icon:
+```
+
+## Your Turn  {.exercise}
+
+* Add a new page to your site
+* Add a link after XX in the navigation
+* Add a link from somewhere in the content of index.qmd
+
+## Navigation Bar
+
+Top Nav customization 
+  - `title`, `icon`, (colors already done?)
+  - `left`, `right`, `tools`
+
+## Navigation Items
+
+Applies in lots of places
+
+- `href` path (page title is used for `text`)
+- Or `text` + `href` +? `icon`
+- `aria-label`
+
+## Your Turn {.exercise}
+
+Customize your navigation bar title
+Experiment with the position of your links in the navbar
+Add at least one `tool` to your navbar
+
+## When things get more complicated...
+
+## Your Turn {.exercise}
+
+Screenshot of quarto.org
+
+Brainstorm with your neighbor: What elements on the page provide the user a way to navigate the site?
+
+## Navigation Options
+
+Some images that represent each approach (include mobile view)
+  - Nested navbar: `menu`
+  - Sidebar: `content`: `auto`, nested `section`s; `tools`
+  - Hybrid
+
+Examples of each with hints/tips
+
+Switch to placeholder project with some nested structure
+
+### Navbar with dropdowns
+
+### Sidebar
+
+```{.yaml filename="_quarto.yml"}
+website:
+  sidebar:
+    contents: auto
+```
+
+`contents`: `auto`, `section`
+
+Sidebar only: https://sta210-s22.github.io/website/
+
+### Hybrid
+
+A collection of pages has its own sidebar.
+Navbar navigates between the different collections.
+
+`navbar`
+`text` -> `title`
+
+## Your Turn {.exercise}
+  
+* Grab the example site
+* Brainstorm ways to organize the navigation
+* Implement one, discuss pros and cons of your choice with your neighbor
+
+## In Page Navigation 
+
+`toc`, `page-navigation`, `repo-url`+`repo-actions`
+
+## Another option: Listings
+
+After the break
+
+## Your Turn {.exercise}
+
+* Free time to edit your site. 
+* Add pages, edit nav. Add content.
+
+We are here to help. Publish a new version.
