@@ -11,3 +11,117 @@ code-line-numbers: false
 ---
 
 # Listings
+
+## Let's add a blog
+
+`blog/` has some folders with pages in them.
+
+(*One might be an `.ipynb` so we can highlight that it just works*)
+
+**Demo:**
+
+1. Make a new page `blog/index.qmd` which is a listing `contents: /`, `type: default`, `categories: false` 
+
+## Listings
+
+A listing is:
+
+- an automatically generated list of content, 
+- styled via a template, built-in templates specified with `type`,
+- can be included on any page
+
+## Your Turn
+
+1.  (Repeat what I did) Make a new page `blog.qmd` which is a listing
+2.  Experiment with `type: grid`, `type: table`
+3.  Experiment with `categories: true`, `categories: unnumbered`, `categories: cloud`
+
+Discuss with your neighbor: 
+
+-  What makes this a blog? 
+-  What would you change if this was a gallery of projects? 
+
+## Review
+
+Some screenshots of experiments
+
+## Adding new items 
+
+**Demo:** Make a new page, fill in appropriate metadata
+
+## A blog is a listing, but a listing doesn't have to be a blog
+
+Include some examples of sites where people use listings for other things
+
+## Listing Fields
+
+https://quarto.org/docs/websites/website-listings.html#listing-fields
+
+E.g. to exclude date
+
+```
+listing:
+  type: grid
+  contents: posts
+  fields: ["image", "title", "categories", "description"]
+```
+
+Or, just use year:
+
+```
+listing:
+  type: grid
+  contents: posts
+  date-format: YYYY
+  fields: ["image", "title", "categories", "description", "date"]
+```
+
+## `contents` can be a YAML file
+
+`projects/index.qmd`  where `contents: projects.yml`
+`projects/projects.yml` 
+
+`path` can be a relative path to a file in your site, or a URL
+
+(inlcude examples of ^ in template repo, include some local and remote images)
+
+## Your Turn
+
+Add an item to the `projects.yml` listing 
+
+Choose a listing `type` and exclude or add to `fields` as you see fit.
+
+Brainstorm a listing page. What could you use a listing for on your own site?
+
+## Advanced Customization
+
+* More than one listing on a page
+* Listing in a custom location on a page
+* Custom Listings
+
+Demonstrate via a series of examples from the "wild"
+
+## Custom Listings
+
+Replace Quarto's `default`, `grid` or `table` template with something completely
+custom
+
+```
+---
+title: Talks
+listing:
+  contents: talks.yml
+  template: my-template.ejs
+---
+```
+
+```{filename="my-template.ejs"}
+# some example to show html, iteration and custom keys
+```
+
+## Your Turn
+
+Add a listing page to your site:
+  - Create a page to house the listing
+  - Populate a .yml file with a couple of items (use ... as a template), or create some placeholder `.qmd` files
+  - Add the page to your site navigation 
