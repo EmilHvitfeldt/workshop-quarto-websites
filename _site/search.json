@@ -5,5 +5,488 @@
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "05-css.html#what-is-css",
+    "href": "05-css.html#what-is-css",
+    "title": "Quarto Websites Workshop",
+    "section": "what is CSS",
+    "text": "what is CSS\n\nCascading Style Sheets is a style sheet language used for specifying the presentation and styling of a document"
+  },
+  {
+    "objectID": "05-css.html#html-syntax-in-5-minutes",
+    "href": "05-css.html#html-syntax-in-5-minutes",
+    "title": "Quarto Websites Workshop",
+    "section": "HTML syntax in 5 minutes",
+    "text": "HTML syntax in 5 minutes\nHTML (HyperText Markup Language) is built on tags like\n&lt;html&gt;&lt;/html&gt; and &lt;div&gt;&lt;/div&gt;\nTags can be nested &lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;\n&lt;div&gt;\n  &lt;div&gt;&lt;/div&gt;\n  &lt;div&gt;&lt;/div&gt;\n&lt;/div&gt;"
+  },
+  {
+    "objectID": "05-css.html#html-head",
+    "href": "05-css.html#html-head",
+    "title": "Quarto Websites Workshop",
+    "section": "HTML head",
+    "text": "HTML head\ncontains:\n\nmeta information\nstyle sheets\nand sometimes scripts (mostly javascript)\n\n95% of this will be handled by Quarto for you"
+  },
+  {
+    "objectID": "05-css.html#html-body",
+    "href": "05-css.html#html-body",
+    "title": "Quarto Websites Workshop",
+    "section": "HTML body",
+    "text": "HTML body\n\nContains everything else"
+  },
+  {
+    "objectID": "05-css.html#common-html-tags",
+    "href": "05-css.html#common-html-tags",
+    "title": "Quarto Websites Workshop",
+    "section": "Common HTML tags",
+    "text": "Common HTML tags\nHeaders\n&lt;h1&gt;, &lt;h2&gt;, &lt;h3&gt;, &lt;h4&gt;, &lt;h5&gt;, &lt;h6&gt;\nParagraph\n&lt;p&gt;\nlinks\n&lt;a&gt;\ngeneral div\n&lt;div&gt;\n\nHTML Element Reference - By Category"
+  },
+  {
+    "objectID": "05-css.html#html-attributes",
+    "href": "05-css.html#html-attributes",
+    "title": "Quarto Websites Workshop",
+    "section": "HTML attributes",
+    "text": "HTML attributes\nAll HTML elements can have attributes\nThey provide additional information about the elements\nAre always specified at the start-tag\nDone by using name-value pairs: name=\"value\"\n\n\nClasses and ids\n&lt;h1 class=\"title\" id=\"special-title\"&gt;\n\n\nImages source attribute\n&lt;img src=\"img_girl.jpg\"&gt;"
+  },
+  {
+    "objectID": "05-css.html#where-is-the-code",
+    "href": "05-css.html#where-is-the-code",
+    "title": "Quarto Websites Workshop",
+    "section": "Where is the code?",
+    "text": "Where is the code?\n\ninline style\nstyle block\nstyle.css"
+  },
+  {
+    "objectID": "05-css.html#in-its-simplest-form",
+    "href": "05-css.html#in-its-simplest-form",
+    "title": "Quarto Websites Workshop",
+    "section": "In its simplest form:",
+    "text": "In its simplest form:\n\nselectors\n\nWhat needs to be styled\n\nAttributes\n\nHow it should be styled"
+  },
+  {
+    "objectID": "05-css.html#selectors",
+    "href": "05-css.html#selectors",
+    "title": "Quarto Websites Workshop",
+    "section": "Selectors",
+    "text": "Selectors\nby tags\nh1 {\n\n}\nby class\n.important {\n\n}\nby id\n#title-text {\n\n}\n\nhttps://www.w3schools.com/cssref/css_selectors.php"
+  },
+  {
+    "objectID": "05-css.html#combining-selectors",
+    "href": "05-css.html#combining-selectors",
+    "title": "Quarto Websites Workshop",
+    "section": "Combining selectors",
+    "text": "Combining selectors\nAll h1 and all h2\nh1, h2 {\n\n}\nAll headers\nh1, h2, h3, h4, h5, h6 {\n\n}\n\nhttps://www.w3schools.com/cssref/css_selectors.php"
+  },
+  {
+    "objectID": "05-css.html#combining-selectors-1",
+    "href": "05-css.html#combining-selectors-1",
+    "title": "Quarto Websites Workshop",
+    "section": "Combining selectors",
+    "text": "Combining selectors\nAll span in p\np span {\n\n}\nOnly &lt;span&gt;friend&lt;/span&gt; would be affected\n&lt;span&gt;Conversation&lt;/span&gt;\n&lt;p&gt;\nhello there my \n&lt;span&gt;friend&lt;/span&gt;\nhow are you doing\n&lt;/p&gt;\n\nhttps://www.w3schools.com/cssref/css_selectors.php"
+  },
+  {
+    "objectID": "05-css.html#selectors-references",
+    "href": "05-css.html#selectors-references",
+    "title": "Quarto Websites Workshop",
+    "section": "Selectors References",
+    "text": "Selectors References\nAs with anything web related, there are tons of resources online\nhttps://www.w3schools.com/cssref/css_selectors.php\nhttps://www.w3schools.com/css/css_selectors.asp\nhttps://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors\nhttps://www.freecodecamp.org/news/css-selectors-cheat-sheet-for-beginners/\nhttps://www.w3.org/TR/CSS21/selector.html%23id-selectors"
+  },
+  {
+    "objectID": "05-css.html#pseudo-classes",
+    "href": "05-css.html#pseudo-classes",
+    "title": "Quarto Websites Workshop",
+    "section": "Pseudo-classes",
+    "text": "Pseudo-classes\nModifies existing classes\n\n\nUser action\n\n:hover\n:active\n\na.navbar:hover {\n  color: blue;\n}\n\na.navbar:active {\n  color: darkblue;\n}\n\n\nhttps://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes"
+  },
+  {
+    "objectID": "05-css.html#pseudo-classes---tree-bases",
+    "href": "05-css.html#pseudo-classes---tree-bases",
+    "title": "Quarto Websites Workshop",
+    "section": "Pseudo-classes - Tree bases",
+    "text": "Pseudo-classes - Tree bases\nCan do math to style only some elements\n\n:first-child\n:nth-of-type\n\np:first-child {\n  border: 2px solid blue;\n}\n\np:nth-of-type(2n+1) {\n  border: 2px solid orange;\n}\n\nhttps://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes"
+  },
+  {
+    "objectID": "05-css.html#pseudo-classes---fancy-selectors",
+    "href": "05-css.html#pseudo-classes---fancy-selectors",
+    "title": "Quarto Websites Workshop",
+    "section": "Pseudo-classes - Fancy selectors",
+    "text": "Pseudo-classes - Fancy selectors\nOutside scope, but shows what can be done if you care to explore it\n\n:has()\n\n\nif h1 has a sibling h2 then set the bottom margin of h1 to 0.25rem\nh1:has(+ h2) {\n  margin-bottom: 0.25rem;\n}\n\n\nWhen the container has a child card hovered, select all the cards that aren’t hovered.\n.card-list:has(.card:hover) .card:not(:hover) {\n  filter: blur(4px)\n}\n\n\nhttps://bejamas.io/blog/learn-css-has-selector-by-examples-top-use-cases/"
+  },
+  {
+    "objectID": "05-css.html#cascading",
+    "href": "05-css.html#cascading",
+    "title": "Quarto Websites Workshop",
+    "section": "Cascading",
+    "text": "Cascading\n\nStylesheets cascade — at a very simple level, this means that the origin, the cascade layer, and the order of CSS rules matter. When two rules from the same cascade layer apply and both have equal specificity, the one that is defined last in the stylesheet is the one that will be used.\n\nh1 looses to h1.title-class because h1.title-class is more specific\n\nhttps://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance"
+  },
+  {
+    "objectID": "05-css.html#attributes",
+    "href": "05-css.html#attributes",
+    "title": "Quarto Websites Workshop",
+    "section": "Attributes",
+    "text": "Attributes\nHow should stuff look\n\nhow things look\n\ncolors\nsizes\nborder lines\n\nlayout"
+  },
+  {
+    "objectID": "05-css.html#layout",
+    "href": "05-css.html#layout",
+    "title": "Quarto Websites Workshop",
+    "section": "Layout",
+    "text": "Layout"
+  },
+  {
+    "objectID": "05-css.html#layout---content",
+    "href": "05-css.html#layout---content",
+    "title": "Quarto Websites Workshop",
+    "section": "Layout - content",
+    "text": "Layout - content\nSize of the content is set using height and width\nValues are lengths\n\n10px\n2em\n\nor percentages\n\n40%\n100%"
+  },
+  {
+    "objectID": "05-css.html#layout---padding",
+    "href": "05-css.html#layout---padding",
+    "title": "Quarto Websites Workshop",
+    "section": "Layout - padding",
+    "text": "Layout - padding\nyou can set the about of padding with\n\npadding or\npadding-bottom, padding-left, padding-right, and padding-top\n\nValues are lengths or percentages.\npadding is used as a shorthand\n\nhttps://www.w3schools.com/css/css_padding.asp"
+  },
+  {
+    "objectID": "05-css.html#layout---padding-1",
+    "href": "05-css.html#layout---padding-1",
+    "title": "Quarto Websites Workshop",
+    "section": "Layout - padding",
+    "text": "Layout - padding\nFollowing are equivalent\n\n\nh1 {\n  padding: 10px;\n}\n\nh1 {\n  padding-bottom: 10px;\n  padding-left: 10px;\n  padding-right: 10px;\n  padding-top: 10px;\n  }\n\n\n\nhttps://www.w3schools.com/css/css_padding.asp"
+  },
+  {
+    "objectID": "05-css.html#layout---padding-2",
+    "href": "05-css.html#layout---padding-2",
+    "title": "Quarto Websites Workshop",
+    "section": "Layout - padding",
+    "text": "Layout - padding\nFollowing are equivalent\n\n\nh1 {\n  padding: 10px 20px;\n}\n\nh1 {\n  padding-bottom: 10px;\n  padding-left: 20px;\n  padding-right: 20px;\n  padding-top: 10px;\n  }\n\n\n\nhttps://www.w3schools.com/css/css_padding.asp"
+  },
+  {
+    "objectID": "05-css.html#layout---padding-3",
+    "href": "05-css.html#layout---padding-3",
+    "title": "Quarto Websites Workshop",
+    "section": "Layout - padding",
+    "text": "Layout - padding\nFollowing are equivalent\n\n\nh1 {\n  padding: 10px 20px 30px;\n}\n\nh1 {\n  padding-bottom: 30px;\n  padding-left: 20px;\n  padding-right: 20px;\n  padding-top: 10px;\n  }\n\n\n\nhttps://www.w3schools.com/css/css_padding.asp"
+  },
+  {
+    "objectID": "05-css.html#layout---padding-4",
+    "href": "05-css.html#layout---padding-4",
+    "title": "Quarto Websites Workshop",
+    "section": "Layout - padding",
+    "text": "Layout - padding\nFollowing are equivalent (clock-wise)\n\n\nh1 {\n  padding: 10px 20px 30px 40px;\n}\n\nh1 {\n  padding-bottom: 30px;\n  padding-left: 40px;\n  padding-right: 20px;\n  padding-top: 10px;\n  }\n\n\n\nhttps://www.w3schools.com/css/css_padding.asp"
+  },
+  {
+    "objectID": "05-css.html#layout---border",
+    "href": "05-css.html#layout---border",
+    "title": "Quarto Websites Workshop",
+    "section": "Layout - border",
+    "text": "Layout - border\nAre styled as\n\n\nh2 {\n  border: 2px solid #32a1ce;\n}\n\nh2 {\n  border-color: #32a1ce;\n  border-style: solid;\n  border-width: 2px;\n}\n\n\n\nhttps://developer.mozilla.org/en-US/docs/Web/CSS/border"
+  },
+  {
+    "objectID": "05-css.html#layout---margin",
+    "href": "05-css.html#layout---margin",
+    "title": "Quarto Websites Workshop",
+    "section": "Layout - margin",
+    "text": "Layout - margin\nworks the same as padding\n\n\nh1 {\n  margin: 10px 20px 30px;\n}\n\nh1 {\n  margin-bottom: 30px;\n  margin-left: 20px;\n  margin-right: 20px;\n  margin-top: 10px;\n  }\n\n\n\nhttps://www.w3schools.com/css/css_margin.asp"
+  },
+  {
+    "objectID": "05-css.html#layout-demo",
+    "href": "05-css.html#layout-demo",
+    "title": "Quarto Websites Workshop",
+    "section": "Layout demo",
+    "text": "Layout demo\nTODO: Make a thing where we can modify values and see them in action"
+  },
+  {
+    "objectID": "05-css.html#css-grid",
+    "href": "05-css.html#css-grid",
+    "title": "Quarto Websites Workshop",
+    "section": "CSS grid",
+    "text": "CSS grid\n\n\nSlightly outside scope, but is useful to know that it exists\n\nElements are styled as columns and rows\n\nA complete Guide to CSS Grid\nCSS Grid Generator"
+  },
+  {
+    "objectID": "05-css.html#css-flexbox",
+    "href": "05-css.html#css-flexbox",
+    "title": "Quarto Websites Workshop",
+    "section": "CSS flexbox",
+    "text": "CSS flexbox\nSlightly outside scope, but is useful to know that it exists\n\nA flex container expands items to fill available free space or shrinks them to prevent overflow.\n\nA complete Guide to Flexbox"
+  },
+  {
+    "objectID": "05-css.html#absolute-positioning",
+    "href": "05-css.html#absolute-positioning",
+    "title": "Quarto Websites Workshop",
+    "section": "Absolute positioning",
+    "text": "Absolute positioning\nSetting\n\nposition: relative; to parent\nposition: absolute; to child\n\nthen set location using top, left, right, and bottom\n&lt;div style=\"position: relative;\"&gt;\n  &lt;img style=\"position: absolute; left: 10%; top: 25%;\"&gt;\n&lt;/div&gt;\nCan be nice to use, but can be an anti-pattern if used too much"
+  },
+  {
+    "objectID": "05-css.html#centering-in-css",
+    "href": "05-css.html#centering-in-css",
+    "title": "Quarto Websites Workshop",
+    "section": "Centering in CSS",
+    "text": "Centering in CSS\nA common joke in programming\nHas been solved for a while\nhttp://howtocenterincss.com/"
+  },
+  {
+    "objectID": "05-css.html#what-is-scss",
+    "href": "05-css.html#what-is-scss",
+    "title": "Quarto Websites Workshop",
+    "section": "What is SCSS",
+    "text": "What is SCSS"
+  },
+  {
+    "objectID": "05-css.html#design-principles",
+    "href": "05-css.html#design-principles",
+    "title": "Quarto Websites Workshop",
+    "section": "Design principles",
+    "text": "Design principles\nWe will assume you have good content, and it is ordered appropriately with different pages and navigation\n\n\nWhat principles can we employ to make the most out of your website\n\n\n\nIf the user thinks “I wonder which button to click”, something bad happened"
+  },
+  {
+    "objectID": "05-css.html#choosing-colors",
+    "href": "05-css.html#choosing-colors",
+    "title": "Quarto Websites Workshop",
+    "section": "Choosing colors",
+    "text": "Choosing colors\nThe colors can come from a lot of different places\n\ncorporate guidelines\nyou\nfrom online inspiration (Pinterest)"
+  },
+  {
+    "objectID": "05-css.html#choosing-fonts",
+    "href": "05-css.html#choosing-fonts",
+    "title": "Quarto Websites Workshop",
+    "section": "Choosing fonts",
+    "text": "Choosing fonts\nUse readable and web-friendly fonts - common fonts are by definition readable as they are familiar - fonts are designed to be used in different areas, optimize for web fonts - don’t pick too many fonts"
+  },
+  {
+    "objectID": "05-css.html#maintaining-accessibility",
+    "href": "05-css.html#maintaining-accessibility",
+    "title": "Quarto Websites Workshop",
+    "section": "Maintaining accessibility",
+    "text": "Maintaining accessibility\nWhat is web accessibility?\n\nWeb accessibility is the practice of creating websites that are usable for all visitors regardless of a disability or impairment. To fulfill web accessibility best practices, you must create a site that complies with certain design and development guidelines that ensure your site is set up to accommodate folks with disabilities. This ensures that all users have the same or similar experience regardless of ability.\n\n\nhttps://blog.hubspot.com/website/web-accessibility"
+  },
+  {
+    "objectID": "05-css.html#custom-themes-header-styling",
+    "href": "05-css.html#custom-themes-header-styling",
+    "title": "Quarto Websites Workshop",
+    "section": "Custom themes & header styling",
+    "text": "Custom themes & header styling\nTODO: have demo of progress of finding the right place to change"
+  },
+  {
+    "objectID": "05-css.html#what-is-sassscss",
+    "href": "05-css.html#what-is-sassscss",
+    "title": "Quarto Websites Workshop",
+    "section": "What is SASS/SCSS",
+    "text": "What is SASS/SCSS\nSASS (CSS with superpowers), is an extension of CSS\nSCSS is one of the syntaxes, the one we will use\n\nhttps://sass-lang.com/"
+  },
+  {
+    "objectID": "05-css.html#why-use-sass",
+    "href": "05-css.html#why-use-sass",
+    "title": "Quarto Websites Workshop",
+    "section": "Why use SASS?",
+    "text": "Why use SASS?\n\nCSS Compatible\nFeature Rich\nMature\n\n\nhttps://sass-lang.com/"
+  },
+  {
+    "objectID": "05-css.html#why-use-sass-1",
+    "href": "05-css.html#why-use-sass-1",
+    "title": "Quarto Websites Workshop",
+    "section": "Why use SASS?",
+    "text": "Why use SASS?\nCSS but with variables, nested rules, mixins, functions and more\n\n\nthe SCSS file will compile to CSS which browsers understand\nQuarto will do all of this for you"
+  },
+  {
+    "objectID": "05-css.html#sass-variables",
+    "href": "05-css.html#sass-variables",
+    "title": "Quarto Websites Workshop",
+    "section": "SASS variables",
+    "text": "SASS variables\nvariables (much like in R and Python) are a way to store a value to use later, done to reduce repetition\n\n\nusing the syntax: $variable-name: value;\n\n\nh2 {\n  color: #32a1ce;\n}\n\n$favorite-blue: #32a1ce;\n\nh2 {\n  color: $favorite-blue;\n}"
+  },
+  {
+    "objectID": "05-css.html#sass-nested-rules",
+    "href": "05-css.html#sass-nested-rules",
+    "title": "Quarto Websites Workshop",
+    "section": "SASS nested rules",
+    "text": "SASS nested rules\nsyntactic way to organize your style sheets\n\n\nh2 {\n  color: #32a1ce;\n\n  a {\n    color: #055778;\n  }\n}\n\nh2 {\n  color: #32a1ce;\n}\n\nh2 a {\n  color: #055778;\n}\n\n\nCan be a even better improvement wth the right IDE settings\n\nhttps://sass-lang.com/documentation/style-rules/#nesting"
+  },
+  {
+    "objectID": "05-css.html#sass-nested-rules-1",
+    "href": "05-css.html#sass-nested-rules-1",
+    "title": "Quarto Websites Workshop",
+    "section": "SASS nested rules",
+    "text": "SASS nested rules\nSelector Combinators works too\n\n\nh2 {\n  color: #32a1ce;\n\n  &gt; a {\n    color: #055778;\n  }\n}\n\nh2 {\n  color: #32a1ce;\n}\n\nh2 &gt; a {\n  color: #055778;\n}\n\n\n\nhttps://sass-lang.com/documentation/style-rules/#nesting"
+  },
+  {
+    "objectID": "05-css.html#sass-nested-rules-2",
+    "href": "05-css.html#sass-nested-rules-2",
+    "title": "Quarto Websites Workshop",
+    "section": "SASS nested rules",
+    "text": "SASS nested rules\nAdd organization to styling\n.speech {\n  background-color: $theme-grey;\n  padding: 1em;\n  margin-bottom: 1em;\n  border-radius: 15px;\n  border-style: solid;\n  border-width: 5px;\n\n  img {\n    margin-bottom: -0.5em;\n    padding-right: 0.5em;\n    transform: scaleX(-1);\n  }\n\n  &.right {\n    text-align: right;\n\n\n    img {\n      padding-left: 0.5em;\n      transform: scaleX(1);\n    }\n  }\n\n  &.pink {\n    background-color: $theme-pink;\n    border-color: darken($theme-pink, 20%);\n  }\n  &.brown {\n    background-color: $theme-brown;\n    border-color: darken($theme-brown, 20%);\n  }\n  &.blue {\n    background-color: $theme-blue;\n    border-color: darken($theme-blue, 20%);\n  }\n  &.purple {\n    background-color: $theme-purple;\n    border-color: darken($theme-purple, 20%);\n  }\n}\n\nhttps://sass-lang.com/documentation/style-rules/#nesting"
+  },
+  {
+    "objectID": "05-css.html#sass-mixins",
+    "href": "05-css.html#sass-mixins",
+    "title": "Quarto Websites Workshop",
+    "section": "SASS mixins",
+    "text": "SASS mixins\nAvoid duplication of style\n\n\n@mixin padding-small {\n  padding-bottom: 10px;\n  padding-left: 20px;\n  padding-right: 20px;\n  padding-top: 10px;\n}\n\nh2 {\n  @include padding-small;\n  color: #32a1ce;\n}\n\nh3 {\n  @include padding-small;\n  color: #32cebc;\n}\n\nh4 {\n  @include padding-small;\n  color: #83ce32;\n}\n\nh2 {\n  padding-bottom: 10px;\n  padding-left: 20px;\n  padding-right: 20px;\n  padding-top: 10px;\n  color: #32a1ce;\n}\n\nh3 {\n  padding-bottom: 10px;\n  padding-left: 20px;\n  padding-right: 20px;\n  padding-top: 10px;\n  color: #32cebc;\n}\n\nh4 {\n  padding-bottom: 10px;\n  padding-left: 20px;\n  padding-right: 20px;\n  padding-top: 10px;\n  color: #83ce32;\n}\n\n\n\nhttps://sass-lang.com/documentation/at-rules/mixin/"
+  },
+  {
+    "objectID": "05-css.html#sass-functions",
+    "href": "05-css.html#sass-functions",
+    "title": "Quarto Websites Workshop",
+    "section": "SASS functions",
+    "text": "SASS functions\nMany different built-in functions\n\n\n$favorite-blue: #32a1ce;\n\nh2 {\n  color: $favorite-blue;\n\n  &gt; a {\n    color: darken($favorite-blue);\n  }\n}\n\nh2 {\n  color: #32a1ce;\n}\n\nh2 &gt; a {\n  color: #055778;\n}\n\n\n\nhttps://sass-lang.com/documentation/modules/"
+  },
+  {
+    "objectID": "05-css.html#what-is-its-purpose",
+    "href": "05-css.html#what-is-its-purpose",
+    "title": "Quarto Websites Workshop",
+    "section": "What is its purpose?",
+    "text": "What is its purpose?\nWhen designing a website we have to keep the audience in mind\nIt all depends on the audience and how you want them to interact with it\n\n\nacademic websites will be different than business sites\n\n\n\n\n\nAcademic\nInformation\n\nBusiness\nCall to action"
+  },
+  {
+    "objectID": "05-css.html#hicks-law",
+    "href": "05-css.html#hicks-law",
+    "title": "Quarto Websites Workshop",
+    "section": "Hick’s Law",
+    "text": "Hick’s Law\n\nEvery additional choice increases the time required to make a decision.\n\n\n\nA reminder to keep it simple\nMake it easy for your users to find what they want"
+  },
+  {
+    "objectID": "05-css.html#readding-patterns",
+    "href": "05-css.html#readding-patterns",
+    "title": "Quarto Websites Workshop",
+    "section": "Readding Patterns",
+    "text": "Readding Patterns\n\n\nF-shaped and Z-shaped\n\nMake sure all content follows a natural order"
+  },
+  {
+    "objectID": "05-css.html#readding-patterns---headers-and-footers",
+    "href": "05-css.html#readding-patterns---headers-and-footers",
+    "title": "Quarto Websites Workshop",
+    "section": "Readding Patterns - headers and footers",
+    "text": "Readding Patterns - headers and footers\nDiscussion:\nKnowing what we know now, what elements are good to place in the header and footer?"
+  },
+  {
+    "objectID": "05-css.html#visual-hierarchy",
+    "href": "05-css.html#visual-hierarchy",
+    "title": "Quarto Websites Workshop",
+    "section": "Visual Hierarchy",
+    "text": "Visual Hierarchy\nTODO: add images"
+  },
+  {
+    "objectID": "05-css.html#negative-space",
+    "href": "05-css.html#negative-space",
+    "title": "Quarto Websites Workshop",
+    "section": "Negative Space",
+    "text": "Negative Space\nYou don’t need to fill all the screen real estate\nwe typically also have a limited text width for ease of reading"
+  },
+  {
+    "objectID": "05-css.html#consistent-design",
+    "href": "05-css.html#consistent-design",
+    "title": "Quarto Websites Workshop",
+    "section": "Consistent Design",
+    "text": "Consistent Design\nWe look at similarities and differences, if an element looks different than the rest, we are going to assume that it matters\nusing principled styling will alleviate many of these problems"
+  },
+  {
+    "objectID": "05-css.html#setting-up-a-color-theme",
+    "href": "05-css.html#setting-up-a-color-theme",
+    "title": "Quarto Websites Workshop",
+    "section": "Setting up a color theme",
+    "text": "Setting up a color theme\nWe can create a color palette in SASS by using a set of environment variables.\n$theme-white: #FFFFFF;\n$theme-black: #222222;\n$theme-blue: #5538f8;\n$theme-red: #df4747;\nThese will then be used throughout the\n$link-color: $theme-blue;\n\n$$sidebar-hl: lighten($theme-blue, 0.5);"
+  },
+  {
+    "objectID": "05-css.html#using-color-on-websites",
+    "href": "05-css.html#using-color-on-websites",
+    "title": "Quarto Websites Workshop",
+    "section": "Using color on websites",
+    "text": "Using color on websites\nBe mindful when using colors\n60-30-10 rule\n60% - Primary color\n\ntypically background\n\n30% - Secondary color\n\ntext and elements\n\n10% - Accent color\n\nhighlights, buttons"
+  },
+  {
+    "objectID": "05-css.html#examples",
+    "href": "05-css.html#examples",
+    "title": "Quarto Websites Workshop",
+    "section": "60-30-10 Examples",
+    "text": "60-30-10 Examples\nTODO: find good pictures"
+  },
+  {
+    "objectID": "05-css.html#deviations",
+    "href": "05-css.html#deviations",
+    "title": "Quarto Websites Workshop",
+    "section": "60-30-10 deviations",
+    "text": "60-30-10 deviations\nAs with all things, this is not a hard and fast rule.\nyou can use fewer or more colors\n\nhttps://codegoda.io/\n\nnotice that they use their colors carefully and consistently"
+  },
+  {
+    "objectID": "05-css.html#html-structure",
+    "href": "05-css.html#html-structure",
+    "title": "Quarto Websites Workshop",
+    "section": "HTML structure",
+    "text": "HTML structure\n\n\nIs built around 3 main tags:\n\n&lt;html&gt;\n&lt;head&gt;\n&lt;body&gt;\n\n\n&lt;!DOCTYPE html&gt; \n&lt;html&gt;\n  &lt;head&gt;\n    &lt;link rel=\"stylesheet\" href=\"styles.css\"&gt;\n  &lt;/head&gt;\n\n  &lt;body&gt;\n    &lt;h1&gt;\n      I'm a header\n    &lt;/h1&gt;\n    &lt;p&gt;\n      Here is some text in a paragraph\n    &lt;/p&gt;\n  &lt;/body&gt;\n&lt;/html&gt;"
+  },
+  {
+    "objectID": "05-css.html#where-is-the-code-for-styling",
+    "href": "05-css.html#where-is-the-code-for-styling",
+    "title": "Quarto Websites Workshop",
+    "section": "Where is the code for styling?",
+    "text": "Where is the code for styling?\n\ninline style\n\n&lt;h1 style=\"color:red;\"&gt;Welcome to styling 101&lt;/h1&gt;\n\nstyle.css\n\nLoaded in &lt;head&gt;\n&lt;link rel=\"stylesheet\" href=\"my-awesome-style.css\"&gt;"
+  },
+  {
+    "objectID": "05-css.html#how-we-use-css",
+    "href": "05-css.html#how-we-use-css",
+    "title": "Quarto Websites Workshop",
+    "section": "How we use CSS",
+    "text": "How we use CSS\nIn its simplest form, we need to define 2 things\n\n\n\nselectors\nWhat needs to be styled\n\n\n\n\nAttributes\nHow it should be styled"
+  },
+  {
+    "objectID": "05-css.html#selectors-1",
+    "href": "05-css.html#selectors-1",
+    "title": "Quarto Websites Workshop",
+    "section": "Selectors",
+    "text": "Selectors\nby tags\nh1 {\n\n}\nby class\n.important {\n\n}\nby id\n#title-text {\n\n}\n\nhttps://www.w3schools.com/cssref/css_selectors.php"
+  },
+  {
+    "objectID": "05-css.html#attributes-1",
+    "href": "05-css.html#attributes-1",
+    "title": "Quarto Websites Workshop",
+    "section": "Attributes",
+    "text": "Attributes\nThe attributes are instructions on how elements should look and behave.\n\nHow things look\n\ncolors\nsizes\nborder lines\netc\n\nHow elements are positioned to other elements\n\nLayout"
+  },
+  {
+    "objectID": "05-css.html#combining-selectors-2",
+    "href": "05-css.html#combining-selectors-2",
+    "title": "Quarto Websites Workshop",
+    "section": "Combining selectors",
+    "text": "Combining selectors\nall h2 1 level deep in .happy\n.happy &gt; h2\nOnly the first would be affected\n&lt;div class=\"happy\"&gt;\n  &lt;h2&gt;header&lt;/h2&gt;\n  &lt;div&gt;\n    &lt;h2&gt;header&lt;/h2&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\nhttps://www.w3schools.com/cssref/css_selectors.php"
+  },
+  {
+    "objectID": "05-css.html#combining-selectors-3",
+    "href": "05-css.html#combining-selectors-3",
+    "title": "Quarto Websites Workshop",
+    "section": "Combining selectors",
+    "text": "Combining selectors\nall h2 elements with .happy class\nh2.happy\nOnly the second h2 would be affected\n&lt;div class=\"happy\"&gt;\n  &lt;h2&gt;header&lt;/h2&gt;\n  &lt;div&gt;\n    &lt;h2 class=\"happy\"&gt;header&lt;/h2&gt;\n  &lt;/div&gt;\n&lt;/div&gt;\n\nhttps://www.w3schools.com/cssref/css_selectors.php"
+  },
+  {
+    "objectID": "05-css.html#combining-selectors-4",
+    "href": "05-css.html#combining-selectors-4",
+    "title": "Quarto Websites Workshop",
+    "section": "Combining selectors",
+    "text": "Combining selectors\nSimpler is “better”\n\nhttps://www.w3schools.com/cssref/css_selectors.php"
+  },
+  {
+    "objectID": "05-css.html#layout-1",
+    "href": "05-css.html#layout-1",
+    "title": "Quarto Websites Workshop",
+    "section": "Layout",
+    "text": "Layout\n\nContent - The content of the box, where text and images appear\nPadding - Clears an area around the content. The padding is transparent\nBorder - A border that goes around the padding and content\nMargin - Clears an area outside the border. The margin is transparent"
+  },
+  {
+    "objectID": "05-css.html#negative-space-1",
+    "href": "05-css.html#negative-space-1",
+    "title": "Quarto Websites Workshop",
+    "section": "Negative Space",
+    "text": "Negative Space"
+  },
+  {
+    "objectID": "05-css.html#negative-space-2",
+    "href": "05-css.html#negative-space-2",
+    "title": "Quarto Websites Workshop",
+    "section": "Negative Space",
+    "text": "Negative Space"
+  },
+  {
+    "objectID": "05-css.html#maintaining-accessibility-1",
+    "href": "05-css.html#maintaining-accessibility-1",
+    "title": "Quarto Websites Workshop",
+    "section": "Maintaining accessibility",
+    "text": "Maintaining accessibility\nHow do we do it?\n\nAvoid blinking/flashing content\nMaintain high color contrast when needed\n\nhttps://colourcontrast.cc/\ncolor contrast varies based on font size\n\nAdd alt-text to elements\nEnsure complete functionality via the keyboard\n\nshould be handled by Quarto"
   }
 ]
