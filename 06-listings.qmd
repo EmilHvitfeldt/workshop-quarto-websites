@@ -129,10 +129,38 @@ categories:
 :::
 ::: 
 
-## Listings beyond blogs
+## Use listings for \_ projects \_
 
-Use listings for: projects, publications, talks, people, modules and more.
+<https://ivelasq.rbind.io/project>
 
+![](images/listings-projects-example.png)
+
+::: footer
+More examples at: <https://charlotte.quarto.pub/listings/>
+:::
+
+## Use listings for \_ talks \_
+
+<https://meghan.rbind.io/talks/>
+
+![](images/listings-talks.png)
+
+::: footer
+More examples at: <https://charlotte.quarto.pub/listings/>
+:::
+
+## Use listings for \_ publications \_
+
+<https://mickael.canouil.fr/publications>
+
+![](images/listings-publications.png)
+
+::: footer
+More examples at: <https://charlotte.quarto.pub/listings/>
+:::
+
+## Use listings for ... 
+ 
 <https://charlotte.quarto.pub/listings/>
 
 ```{=html}
