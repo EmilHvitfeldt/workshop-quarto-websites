@@ -32,7 +32,7 @@ title: Talks
 ---
 
 {{< lipsum 1 >}}
-{{< placeholder >}}
+{{< placeholder 400 400 >}}
 ```
 :::
 :::::
@@ -326,13 +326,29 @@ https://quarto.org/docs/websites/website-navigation.html#top-navigation
 
 </details>
 
-## Top or Side Navigation
+## Primary Navigation
 
 ::::: columns
 ::: column
 Top navigation
 
-``` {.yaml filename="_quarto.yml" code-line-numbers="|2|3"}
+![](images/navigation-top.png)
+:::
+
+::: column
+Side navigation
+
+![](images/navigation-side.png)
+:::
+:::::
+
+## Primary Navigation
+
+::::: columns
+::: column
+Top navigation
+
+``` {.yaml filename="_quarto.yml" code-line-numbers=""}
 website:
   navbar:
     left:
@@ -365,6 +381,22 @@ website:
 ```
 
 Add items to `contents` and `tools`
+:::
+:::::
+
+## Nested Navigation
+
+::::: columns
+::: column
+Top navigation
+
+![](images/navigation-top-nested.png)
+:::
+
+::: column
+Side navigation
+
+![](images/navigation-side-nested.png)
 :::
 :::::
 
@@ -411,6 +443,16 @@ Add a `section` with its own `contents`
 Top navigation navigates between the different "sections" of the website.
 
 Each "section" has its own side navigation.
+
+::::: columns
+::: column
+![](images/navigation-hybrid-1.png)
+:::
+
+::: column
+![](images/navigation-hybrid-2.png)
+:::
+:::::
 
 ## Hybrid Navigation
 
@@ -462,11 +504,37 @@ Pick one, and discuss the pros and cons with your neighbor.
 
 ## Pro and Cons
 
-|          | Pros | Cons |
-|----------|------|------|
-| Side nav |      |      |
-| Top nav  |      |      |
-| Hybrid   |      |      |
++-----------+----------------------------+----------------------------+
+|           | Pros                       | Cons                       |
++===========+============================+============================+
+| Side nav  |                            |                            |
++-----------+----------------------------+----------------------------+
+| Top nav   |                            |                            |
++-----------+----------------------------+----------------------------+
+| Hybrid    |                            |                            |
++-----------+----------------------------+----------------------------+
+
+## Pro and Cons {.hidden}
+
++----------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+|          | Pros                                                                        | Cons                                                                        |
++==========+=============================================================================+=============================================================================+
+| Side nav | -   `auto`: easy to generate and maintain                                   | -   May show too much detail for sections that aren't of immediate interest |
+|          |                                                                             |                                                                             |
+|          | -   Linearly present linear content (e.g. a progression through a tutorial) |                                                                             |
+|          |                                                                             |                                                                             |
+|          | -   Can be deeply nested                                                    |                                                                             |
+|          |                                                                             |                                                                             |
+|          | -   Can handle longer entries                                               |                                                                             |
++----------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| Top nav  | -   First place most people look                                            | -   Not good for long entries, e.g. keep to short single words              |
+|          |                                                                             |                                                                             |
+|          |                                                                             | -   Can't be nested beyond one level                                        |
+|          |                                                                             |                                                                             |
+|          |                                                                             | -   Nested content is hidden unless clicked on                              |
++----------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| Hybrid   | -   Organize lots of content without overwhelming viewer                    | -   Harder to build and maintain                                            |
++----------+-----------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 # Other navigation elements
 
