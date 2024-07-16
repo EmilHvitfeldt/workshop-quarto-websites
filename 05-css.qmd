@@ -296,6 +296,16 @@ Only the second `h2` would be affected
 https://www.w3schools.com/cssref/css_selectors.php
 :::
 
+## Your turn
+
+Open `styles.scss` file and do the following:
+
+- Change styling of `h1` and `h2` elements
+    - at least change the color
+- Change styling of text (`p` elements)
+- Change styling of only the subtitle of the front page
+- Change styling of buttons on front page
+
 ## Selectors References
 
 As with anything web related, there are tons of resources online
@@ -390,6 +400,14 @@ When the container has a child card hovered, select all the cards that aren’t 
 <https://bejamas.io/blog/learn-css-has-selector-by-examples-top-use-cases/>
 :::
 
+## Your turn
+
+Open `styles.scss` file and do the following:
+
+1. Find an element that would benefit from having a pseudo-class
+    - `:hover` is a safe choice, but not the only one
+2. Apply pseudo-class to said element
+
 ## Cascading
 
 > Stylesheets cascade — at a very simple level, this means that the origin, the cascade layer, and the order of CSS rules matter. When two rules from the same cascade layer apply and both have **equal specificity**, the one that is **defined last** in the stylesheet is the one that will be used.
@@ -437,6 +455,14 @@ Values are [lengths](https://developer.mozilla.org/en-US/docs/Web/CSS/length)
 
 - `40%`
 - `100%`
+
+## Your turn
+
+Open `styles.scss` file and do the following:
+
+1. Find an element
+    - images or text
+2. Change the `height` and `width`
 
 ## Layout - padding
 
@@ -570,6 +596,12 @@ h1 {
 <https://www.w3schools.com/css/css_padding.asp>
 :::
 
+## Your turn
+
+Continue with element from before
+
+1. Change the 4 values of `padding` and see what happens
+
 ## Layout - border
 
 Are styled as
@@ -626,6 +658,12 @@ h1 {
 ::: footer
 <https://www.w3schools.com/css/css_margin.asp>
 :::
+
+## Your turn
+
+Continue with element from before
+
+1. Change the 4 values of `margin` and see what happens
 
 ## CSS grid
 
@@ -744,6 +782,13 @@ h2 {
 :::
 
 :::
+
+## Your Turn
+
+-Open `styles.scss` and 
+
+- use a SASS variable to define `h1` and `h2` colors
+- consider what other things we could use variables for
 
 ## SASS nested rules
 
@@ -866,6 +911,12 @@ Add organization to styling
 <https://sass-lang.com/documentation/style-rules/#nesting>
 :::
 
+## Your Turn
+
+-Open `styles.scss` and 
+
+- rewrite your existing styles to use nested rules
+
 ## SASS mixins
 
 Avoid duplication of style
@@ -930,6 +981,12 @@ h4 {
 <https://sass-lang.com/documentation/at-rules/mixin/>
 :::
 
+## Your Turn
+
+-Open `styles.scss` and 
+
+- use a SASS mixins to reduce complexity in your styles
+
 ## SASS functions
 
 Many different built-in functions
@@ -967,6 +1024,12 @@ h2 > a {
 ::: footer
 <https://sass-lang.com/documentation/modules/>
 :::
+
+## Your Turn
+
+-Open `styles.scss` and 
+
+- use a SASS color function to make the colors of `h1` and `h2` different
 
 ## Design principles 
 
@@ -1109,6 +1172,14 @@ $link-color: $theme-blue;
 $$sidebar-hl: lighten($theme-blue, 0.5);
 ```
 
+## Your turn
+
+Open `styles.scss` then
+
+- find a color theme
+- add colors as SASS variables
+- Use SASS variables
+
 ## Using color on websites
 
 Be mindful when using colors
@@ -1167,3 +1238,9 @@ How do we do it?
 - Add alt-text to elements
 -  Ensure complete functionality via the keyboard
     - should be handled by Quarto
+
+## Your turn
+
+Open `styles.scss` then
+
+- make temporary changes to the colors, sizes and fonts that would go against accessibility advice to see how the experience gets worse
