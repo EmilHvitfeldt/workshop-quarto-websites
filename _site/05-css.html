@@ -8,9 +8,9 @@
 <link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.549">
+  <meta name="generator" content="quarto-1.4.554">
 
-  <title>Workshop Quarto Websites</title>
+  <title>Quarto Websites Workshop</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -28,6 +28,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -325,15 +390,924 @@
     <div class="slides">
 
 
-<section id="css" class="title-slide slide level1 center">
-<h1>CSS</h1>
+<section>
+<section id="css-scss" class="title-slide slide level1 center">
+<h1>CSS / SCSS</h1>
+
+</section>
+<section id="what-is-css" class="slide level2">
+<h2>what is CSS</h2>
+<div class="r-stack">
+<p><span class="fragment"><strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets is a style sheet language used for specifying the presentation and styling of a document</span></p>
+<p><img data-src="images/website-unstyled.png" class="fragment" width="1280" height="600"></p>
+<p><img data-src="images/website-styled.png" class="fragment" width="1280" height="600"></p>
+</div>
+</section>
+<section id="html-syntax-in-5-minutes" class="slide level2">
+<h2>HTML syntax in 5 minutes</h2>
+<p>HTML (<strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage) is built on tags like</p>
+<p><code>&lt;html&gt;&lt;/html&gt;</code> and <code>&lt;div&gt;&lt;/div&gt;</code></p>
+<p>Tags can be nested <code>&lt;div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/div&gt;</code></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb1-1"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb1-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb1-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb1-4"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="html-structure" class="slide level2">
+<h2>HTML structure</h2>
+<div class="columns">
+<div class="column">
+<p>Is built around 3 main tags:</p>
+<ul>
+<li><code>&lt;html&gt;</code></li>
+<li><code>&lt;head&gt;</code></li>
+<li><code>&lt;body&gt;</code></li>
+</ul>
+</div><div class="column">
+<div class="sourceCode" id="cb2"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb2-1"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;!DOCTYPE</span> html<span class="dt">&gt;</span> </span>
+<span id="cb2-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;</span></span>
+<span id="cb2-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb2-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">link</span><span class="ot"> rel</span><span class="op">=</span><span class="st">"stylesheet"</span><span class="ot"> href</span><span class="op">=</span><span class="st">"styles.css"</span><span class="dt">&gt;</span></span>
+<span id="cb2-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">head</span><span class="dt">&gt;</span></span>
+<span id="cb2-6"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb2-8"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb2-9"><a aria-hidden="true" tabindex="-1"></a>      I'm a header</span>
+<span id="cb2-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">h1</span><span class="dt">&gt;</span></span>
+<span id="cb2-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb2-12"><a aria-hidden="true" tabindex="-1"></a>      Here is some text in a paragraph</span>
+<span id="cb2-13"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb2-14"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">body</span><span class="dt">&gt;</span></span>
+<span id="cb2-15"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="html-head" class="slide level2">
+<h2>HTML head</h2>
+<p>contains:</p>
+<ul>
+<li>meta information</li>
+<li>style sheets</li>
+<li>and sometimes scripts (mostly javascript)</li>
+</ul>
+<p>95% of this will be handled by Quarto for you</p>
+</section>
+<section id="html-body" class="slide level2">
+<h2>HTML body</h2>
+<p><br><br></p>
+<p>Contains everything else</p>
+</section>
+<section id="common-html-tags" class="slide level2">
+<h2>Common HTML tags</h2>
+<p>Headers</p>
+<p><code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code></p>
+<p>Paragraph</p>
+<p><code>&lt;p&gt;</code></p>
+<p>links</p>
+<p><code>&lt;a&gt;</code></p>
+<p>general div</p>
+<p><code>&lt;div&gt;</code></p>
+<div class="footer">
+<p><a href="https://www.w3schools.com/tags/ref_byfunc.asp">HTML Element Reference - By Category</a></p>
+</div>
+</section>
+<section id="html-attributes" class="slide level2">
+<h2>HTML attributes</h2>
+<p>All HTML elements can have attributes</p>
+<p>They provide additional information about the elements</p>
+<p>Are always specified at the start-tag</p>
+<p>Done by using name-value pairs: <code>name="value"</code></p>
+<p><br></p>
+<div class="fragment">
+<p>Classes and ids</p>
+<p><code>&lt;h1 class="title" id="special-title"&gt;</code></p>
+</div>
+<div class="fragment">
+<p>Images source attribute</p>
+<p><code>&lt;img src="img_girl.jpg"&gt;</code></p>
+</div>
+</section>
+<section id="where-is-the-code-for-styling" class="slide level2">
+<h2>Where is the code for styling?</h2>
+<ul>
+<li>inline style</li>
+</ul>
+<p><code>&lt;h1 style="color:red;"&gt;Welcome to styling 101&lt;/h1&gt;</code></p>
+<ul>
+<li>style.css</li>
+</ul>
+<p>Loaded in <code>&lt;head&gt;</code></p>
+<p><code>&lt;link rel="stylesheet" href="my-awesome-style.css"&gt;</code></p>
+</section>
+<section id="how-we-use-css" class="slide level2">
+<h2>How we use CSS</h2>
+<p>In its simplest form, we need to define 2 things</p>
+<p><br></p>
+<div class="fragment">
+<!-- -->
+<h3 id="selectors">selectors</h3>
+<p>What needs to be styled</p>
+</div>
+<p><br></p>
+<div class="fragment">
+<!-- -->
+<h3 id="attributes">Attributes</h3>
+<p>How it should be styled</p>
+</div>
+</section>
+<section id="selectors-1" class="slide level2">
+<h2>Selectors</h2>
+<p>by tags</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb3-1"><a aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb3-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>by class</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb4-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">.important</span> {</span>
+<span id="cb4-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>by id</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb5-1"><a aria-hidden="true" tabindex="-1"></a><span class="pp">#title-text</span> {</span>
+<span id="cb5-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>https://www.w3schools.com/cssref/css_selectors.php</p>
+</div>
+</section>
+<section id="combining-selectors" class="slide level2">
+<h2>Combining selectors</h2>
+<p>All <code>h1</code> and all <code>h2</code></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb6-1"><a aria-hidden="true" tabindex="-1"></a>h1<span class="op">,</span> h2 {</span>
+<span id="cb6-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>All headers</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb7-1"><a aria-hidden="true" tabindex="-1"></a>h1<span class="op">,</span> h2<span class="op">,</span> h3<span class="op">,</span> h4<span class="op">,</span> h5<span class="op">,</span> h6 {</span>
+<span id="cb7-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>https://www.w3schools.com/cssref/css_selectors.php</p>
+</div>
+</section>
+<section id="combining-selectors-1" class="slide level2">
+<h2>Combining selectors</h2>
+<p>All <code>span</code> in <code>p</code></p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb8-1"><a aria-hidden="true" tabindex="-1"></a>p span {</span>
+<span id="cb8-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Only <code>&lt;span&gt;friend&lt;/span&gt;</code> would be affected</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb9-1"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="dt">&gt;</span>Conversation<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb9-2"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">p</span><span class="dt">&gt;</span></span>
+<span id="cb9-3"><a aria-hidden="true" tabindex="-1"></a>hello there my </span>
+<span id="cb9-4"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">span</span><span class="dt">&gt;</span>friend<span class="dt">&lt;/</span><span class="kw">span</span><span class="dt">&gt;</span></span>
+<span id="cb9-5"><a aria-hidden="true" tabindex="-1"></a>how are you doing</span>
+<span id="cb9-6"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">p</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>https://www.w3schools.com/cssref/css_selectors.php</p>
+</div>
+</section>
+<section id="combining-selectors-2" class="slide level2">
+<h2>Combining selectors</h2>
+<p>all <code>h2</code> 1 level deep in <code>.happy</code></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb10-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">.happy</span> <span class="op">&gt;</span> h2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Only the first would be affected</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb11-1"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"happy"</span><span class="dt">&gt;</span></span>
+<span id="cb11-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>header<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb11-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb11-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>header<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb11-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb11-6"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>https://www.w3schools.com/cssref/css_selectors.php</p>
+</div>
+</section>
+<section id="combining-selectors-3" class="slide level2">
+<h2>Combining selectors</h2>
+<p>all <code>h2</code> elements with <code>.happy</code> class</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb12-1"><a aria-hidden="true" tabindex="-1"></a>h2<span class="fu">.happy</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Only the second <code>h2</code> would be affected</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb13-1"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> class</span><span class="op">=</span><span class="st">"happy"</span><span class="dt">&gt;</span></span>
+<span id="cb13-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">h2</span><span class="dt">&gt;</span>header<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb13-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb13-4"><a aria-hidden="true" tabindex="-1"></a>    <span class="dt">&lt;</span><span class="kw">h2</span><span class="ot"> class</span><span class="op">=</span><span class="st">"happy"</span><span class="dt">&gt;</span>header<span class="dt">&lt;/</span><span class="kw">h2</span><span class="dt">&gt;</span></span>
+<span id="cb13-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
+<span id="cb13-6"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p>https://www.w3schools.com/cssref/css_selectors.php</p>
+</div>
+</section>
+<section id="selectors-references" class="slide level2">
+<h2>Selectors References</h2>
+<p>As with anything web related, there are tons of resources online</p>
+<p><a href="https://www.w3schools.com/cssref/css_selectors.php" class="uri">https://www.w3schools.com/cssref/css_selectors.php</a></p>
+<p><a href="https://www.w3schools.com/css/css_selectors.asp" class="uri">https://www.w3schools.com/css/css_selectors.asp</a></p>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors" class="uri">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_selectors</a></p>
+<p><a href="https://www.freecodecamp.org/news/css-selectors-cheat-sheet-for-beginners/" class="uri">https://www.freecodecamp.org/news/css-selectors-cheat-sheet-for-beginners/</a></p>
+<p><a href="https://www.w3.org/TR/CSS21/selector.html%23id-selectors" class="uri">https://www.w3.org/TR/CSS21/selector.html%23id-selectors</a></p>
+</section>
+<section id="pseudo-classes" class="slide level2">
+<h2>Pseudo-classes</h2>
+<p>Modifies existing classes</p>
+<div class="fragment">
+<!-- -->
+<h3 id="user-action">User action</h3>
+<ul>
+<li><code>:hover</code></li>
+<li><code>:active</code></li>
+</ul>
+<div class="sourceCode" id="cb14"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb14-1"><a aria-hidden="true" tabindex="-1"></a>a<span class="fu">.navbar</span><span class="in">:hover</span> {</span>
+<span id="cb14-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb14-3"><a aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb14-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a aria-hidden="true" tabindex="-1"></a>a<span class="fu">.navbar</span><span class="in">:active</span> {</span>
+<span id="cb14-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">darkblue</span><span class="op">;</span></span>
+<span id="cb14-7"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="footer">
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" class="uri">https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes</a></p>
+</div>
+</section>
+<section id="pseudo-classes---tree-bases" class="slide level2">
+<h2>Pseudo-classes - Tree bases</h2>
+<p>Can do math to style only some elements</p>
+<ul>
+<li><code>:first-child</code></li>
+<li><code>:nth-of-type</code></li>
+</ul>
+<div class="sourceCode" id="cb15"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb15-1"><a aria-hidden="true" tabindex="-1"></a>p<span class="in">:first-child</span> {</span>
+<span id="cb15-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">border</span><span class="ch">:</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">blue</span><span class="op">;</span></span>
+<span id="cb15-3"><a aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb15-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a aria-hidden="true" tabindex="-1"></a>p<span class="in">:nth-of-type(</span><span class="dv">2</span><span class="dt">n</span><span class="op">+</span><span class="dv">1</span><span class="in">)</span> {</span>
+<span id="cb15-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">border</span><span class="ch">:</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">orange</span><span class="op">;</span></span>
+<span id="cb15-7"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" class="uri">https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes</a></p>
+</div>
+</section>
+<section id="pseudo-classes---fancy-selectors" class="slide level2">
+<h2>Pseudo-classes - Fancy selectors</h2>
+<p>Outside scope, but shows what can be done if you care to explore it</p>
+<ul>
+<li><code>:has()</code></li>
+</ul>
+<div class="fragment">
+<p>if <code>h1</code> has a sibling <code>h2</code> then set the bottom margin of <code>h1</code> to <code>0.25rem</code></p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb16-1"><a aria-hidden="true" tabindex="-1"></a>h1<span class="in">:has(</span><span class="op">+</span> h2<span class="in">)</span> {</span>
+<span id="cb16-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-bottom</span><span class="ch">:</span> <span class="dv">0.25</span><span class="dt">rem</span><span class="op">;</span></span>
+<span id="cb16-3"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>When the container has a child card hovered, select all the cards that aren’t hovered.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb17-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">.card-list</span><span class="in">:has(</span><span class="fu">.card</span><span class="in">:hover)</span> <span class="fu">.card</span><span class="in">:not(:hover)</span> {</span>
+<span id="cb17-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">filter</span><span class="ch">:</span> <span class="fu">blur(</span><span class="dv">4</span><span class="dt">px</span><span class="fu">)</span></span>
+<span id="cb17-3"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="footer">
+<p><a href="https://bejamas.io/blog/learn-css-has-selector-by-examples-top-use-cases/" class="uri">https://bejamas.io/blog/learn-css-has-selector-by-examples-top-use-cases/</a></p>
+</div>
+</section>
+<section id="cascading" class="slide level2">
+<h2>Cascading</h2>
+<blockquote>
+<p>Stylesheets cascade — at a very simple level, this means that the origin, the cascade layer, and the order of CSS rules matter. When two rules from the same cascade layer apply and both have <strong>equal specificity</strong>, the one that is <strong>defined last</strong> in the stylesheet is the one that will be used.</p>
+</blockquote>
+<p><code>h1</code> looses to <code>h1.title-class</code> because <code>h1.title-class</code> is more specific</p>
+<div class="footer">
+<p><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance" class="uri">https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance</a></p>
+</div>
+</section>
+<section id="attributes-1" class="slide level2">
+<h2>Attributes</h2>
+<p>The attributes are instructions on how elements should look and behave.</p>
+<ul>
+<li>How things look
+<ul>
+<li>colors</li>
+<li>sizes</li>
+<li>border lines</li>
+<li>etc</li>
+</ul></li>
+<li>How elements are positioned to other elements
+<ul>
+<li>Layout</li>
+</ul></li>
+</ul>
+</section>
+<section id="layout" class="slide level2">
+<h2>Layout</h2>
+
+<img data-src="images/box-model.png" class="r-stretch"></section>
+<section id="layout-1" class="slide level2">
+<h2>Layout</h2>
+<ul>
+<li>Content - The content of the box, where text and images appear</li>
+<li>Padding - Clears an area around the content. The padding is transparent</li>
+<li>Border - A border that goes around the padding and content</li>
+<li>Margin - Clears an area outside the border. The margin is transparent</li>
+</ul>
+</section>
+<section id="layout---content" class="slide level2">
+<h2>Layout - content</h2>
+<p>Size of the content is set using <code>height</code> and <code>width</code></p>
+<p>Values are <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">lengths</a></p>
+<ul>
+<li><code>10px</code></li>
+<li><code>2em</code></li>
+</ul>
+<p>or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage">percentages</a></p>
+<ul>
+<li><code>40%</code></li>
+<li><code>100%</code></li>
+</ul>
+</section>
+<section id="layout---padding" class="slide level2">
+<h2>Layout - padding</h2>
+<p>you can set the about of padding with</p>
+<ul>
+<li><p><code>padding</code> or</p></li>
+<li><p><code>padding-bottom</code>, <code>padding-left</code>, <code>padding-right</code>, and <code>padding-top</code></p></li>
+</ul>
+<p>Values are <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/length">lengths</a> or <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/percentage">percentages</a>.</p>
+<p><code>padding</code> is used as a shorthand</p>
+<div class="footer">
+<p><a href="https://www.w3schools.com/css/css_padding.asp" class="uri">https://www.w3schools.com/css/css_padding.asp</a></p>
+</div>
+</section>
+<section id="layout---padding-1" class="slide level2">
+<h2>Layout - padding</h2>
+<p>Following are equivalent</p>
+<div class="columns">
+<div class="column">
+<div class="sourceCode" id="cb18"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb18-1"><a aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb18-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb18-3"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="sourceCode" id="cb19"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb19-1"><a aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb19-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-bottom</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb19-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-left</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb19-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-right</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb19-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-top</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb19-6"><a aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://www.w3schools.com/css/css_padding.asp" class="uri">https://www.w3schools.com/css/css_padding.asp</a></p>
+</div>
+</section>
+<section id="layout---padding-2" class="slide level2">
+<h2>Layout - padding</h2>
+<p>Following are equivalent</p>
+<div class="columns">
+<div class="column">
+<div class="sourceCode" id="cb20"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb20-1"><a aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb20-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb20-3"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="sourceCode" id="cb21"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb21-1"><a aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb21-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-bottom</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb21-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-left</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb21-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-right</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb21-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-top</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb21-6"><a aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://www.w3schools.com/css/css_padding.asp" class="uri">https://www.w3schools.com/css/css_padding.asp</a></p>
+</div>
+</section>
+<section id="layout---padding-3" class="slide level2">
+<h2>Layout - padding</h2>
+<p>Following are equivalent</p>
+<div class="columns">
+<div class="column">
+<div class="sourceCode" id="cb22"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb22-1"><a aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb22-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span> <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb22-3"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="sourceCode" id="cb23"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb23-1"><a aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb23-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-bottom</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb23-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-left</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb23-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-right</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb23-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-top</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb23-6"><a aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://www.w3schools.com/css/css_padding.asp" class="uri">https://www.w3schools.com/css/css_padding.asp</a></p>
+</div>
+</section>
+<section id="layout---padding-4" class="slide level2">
+<h2>Layout - padding</h2>
+<p>Following are equivalent (clock-wise)</p>
+<div class="columns">
+<div class="column">
+<div class="sourceCode" id="cb24"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb24-1"><a aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb24-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span> <span class="dv">30</span><span class="dt">px</span> <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb24-3"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="sourceCode" id="cb25"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb25-1"><a aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb25-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-bottom</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb25-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-left</span><span class="ch">:</span> <span class="dv">40</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb25-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-right</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb25-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-top</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb25-6"><a aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://www.w3schools.com/css/css_padding.asp" class="uri">https://www.w3schools.com/css/css_padding.asp</a></p>
+</div>
+</section>
+<section id="layout---border" class="slide level2">
+<h2>Layout - border</h2>
+<p>Are styled as</p>
+<div class="columns">
+<div class="column">
+<div class="sourceCode" id="cb26"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb26-1"><a aria-hidden="true" tabindex="-1"></a>h2 {</span>
+<span id="cb26-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">border</span><span class="ch">:</span> <span class="dv">2</span><span class="dt">px</span> <span class="dv">solid</span> <span class="cn">#32a1ce</span><span class="op">;</span></span>
+<span id="cb26-3"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="sourceCode" id="cb27"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb27-1"><a aria-hidden="true" tabindex="-1"></a>h2 {</span>
+<span id="cb27-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-color</span><span class="ch">:</span> <span class="cn">#32a1ce</span><span class="op">;</span></span>
+<span id="cb27-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-style</span><span class="ch">:</span> <span class="dv">solid</span><span class="op">;</span></span>
+<span id="cb27-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-width</span><span class="ch">:</span> <span class="dv">2</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb27-5"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border" class="uri">https://developer.mozilla.org/en-US/docs/Web/CSS/border</a></p>
+</div>
+</section>
+<section id="layout---margin" class="slide level2">
+<h2>Layout - margin</h2>
+<p>works the same as padding</p>
+<div class="columns">
+<div class="column">
+<div class="sourceCode" id="cb28"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb28-1"><a aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb28-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span> <span class="dv">20</span><span class="dt">px</span> <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb28-3"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="sourceCode" id="cb29"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb29-1"><a aria-hidden="true" tabindex="-1"></a>h1 {</span>
+<span id="cb29-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-bottom</span><span class="ch">:</span> <span class="dv">30</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb29-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-left</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb29-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-right</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb29-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-top</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb29-6"><a aria-hidden="true" tabindex="-1"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://www.w3schools.com/css/css_margin.asp" class="uri">https://www.w3schools.com/css/css_margin.asp</a></p>
+</div>
+</section>
+<section id="css-grid" class="slide level2">
+<h2>CSS grid</h2>
+<div class="columns">
+<div class="column">
+<p>Slightly outside scope, but is useful to know that it exists</p>
+<p><br></p>
+<p>Elements are styled as columns and rows</p>
+<p><br></p>
+<p><a href="https://css-tricks.com/snippets/css/complete-guide-grid/">A complete Guide to CSS Grid</a></p>
+<p><a href="https://cssgrid-generator.netlify.app/">CSS Grid Generator</a></p>
+</div><div class="column">
+<p><img data-src="images/css-grid.png"></p>
+</div>
+</div>
+</section>
+<section id="css-flexbox" class="slide level2">
+<h2>CSS flexbox</h2>
+<p>Slightly outside scope, but is useful to know that it exists</p>
+<blockquote>
+<p>A flex container expands items to fill available free space or shrinks them to prevent overflow.</p>
+</blockquote>
+<p><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">A complete Guide to Flexbox</a></p>
+</section>
+<section id="absolute-positioning" class="slide level2">
+<h2>Absolute positioning</h2>
+<p>Setting</p>
+<ul>
+<li><code>position: relative;</code> to parent</li>
+<li><code>position: absolute;</code> to child</li>
+</ul>
+<p>then set location using <code>top</code>, <code>left</code>, <code>right</code>, and <code>bottom</code></p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb30-1"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">div</span><span class="ot"> style</span><span class="op">=</span><span class="st">"position: relative;"</span><span class="dt">&gt;</span></span>
+<span id="cb30-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="dt">&lt;</span><span class="kw">img</span><span class="ot"> style</span><span class="op">=</span><span class="st">"position: absolute; left: 10%; top: 25%;"</span><span class="dt">&gt;</span></span>
+<span id="cb30-3"><a aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Can be nice to use, but can be an anti-pattern if used too much</p>
+</section>
+<section id="centering-in-css" class="slide level2">
+<h2>Centering in CSS</h2>
+<p>A common joke in programming</p>
+<p>Has been solved for a while</p>
+<p><a href="http://howtocenterincss.com/" class="uri">http://howtocenterincss.com/</a></p>
+</section>
+<section id="what-is-sassscss" class="slide level2">
+<h2>What is SASS/SCSS</h2>
+<p>SASS (CSS with superpowers), is an extension of CSS</p>
+<p>SCSS is one of the syntaxes, the one we will use</p>
+<div class="footer">
+<p><a href="https://sass-lang.com/" class="uri">https://sass-lang.com/</a></p>
+</div>
+</section>
+<section id="why-use-sass" class="slide level2">
+<h2>Why use SASS?</h2>
+<ul>
+<li>CSS Compatible</li>
+<li>Feature Rich</li>
+<li>Mature</li>
+</ul>
+<div class="footer">
+<p><a href="https://sass-lang.com/" class="uri">https://sass-lang.com/</a></p>
+</div>
+</section>
+<section id="why-use-sass-1" class="slide level2">
+<h2>Why use SASS?</h2>
+<p>CSS but with variables, nested rules, mixins, functions and more</p>
+<p><br></p>
+<div class="fragment">
+<p>the SCSS file will compile to CSS which browsers understand</p>
+<p>Quarto will do all of this for you</p>
+</div>
+</section>
+<section id="sass-variables" class="slide level2">
+<h2>SASS variables</h2>
+<p>variables (much like in R and Python) are a way to store a value to use later, done to reduce repetition</p>
+<p><br></p>
+<div class="fragment">
+<p>using the syntax: <code>$variable-name: value;</code></p>
+<div class="columns">
+<div class="column">
+<div class="sourceCode" id="cb31"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb31-1"><a aria-hidden="true" tabindex="-1"></a>h2 {</span>
+<span id="cb31-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#32a1ce</span><span class="op">;</span></span>
+<span id="cb31-3"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="sourceCode" id="cb32"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb32-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">$favorite-blue</span>: <span class="cn">#32a1ce</span><span class="op">;</span></span>
+<span id="cb32-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-3"><a aria-hidden="true" tabindex="-1"></a>h2 {</span>
+<span id="cb32-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="va">$favorite-blue</span><span class="op">;</span></span>
+<span id="cb32-5"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sass-nested-rules" class="slide level2">
+<h2>SASS nested rules</h2>
+<p>syntactic way to organize your style sheets</p>
+<div class="columns">
+<div class="column">
+<div class="sourceCode" id="cb33"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb33-1"><a aria-hidden="true" tabindex="-1"></a>h2 {</span>
+<span id="cb33-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">#32a1ce</span><span class="op">;</span></span>
+<span id="cb33-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a aria-hidden="true" tabindex="-1"></a>  a {</span>
+<span id="cb33-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">#055778</span><span class="op">;</span></span>
+<span id="cb33-6"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb33-7"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="sourceCode" id="cb34"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb34-1"><a aria-hidden="true" tabindex="-1"></a>h2 {</span>
+<span id="cb34-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#32a1ce</span><span class="op">;</span></span>
+<span id="cb34-3"><a aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb34-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-5"><a aria-hidden="true" tabindex="-1"></a>h2 a {</span>
+<span id="cb34-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#055778</span><span class="op">;</span></span>
+<span id="cb34-7"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<p>Can be a even better improvement wth the right IDE settings</p>
+<div class="footer">
+<p><a href="https://sass-lang.com/documentation/style-rules/#nesting" class="uri">https://sass-lang.com/documentation/style-rules/#nesting</a></p>
+</div>
+</section>
+<section id="sass-nested-rules-1" class="slide level2">
+<h2>SASS nested rules</h2>
+<p>Selector Combinators works too</p>
+<div class="columns">
+<div class="column">
+<div class="sourceCode" id="cb35"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb35-1"><a aria-hidden="true" tabindex="-1"></a>h2 {</span>
+<span id="cb35-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">#32a1ce</span><span class="op">;</span></span>
+<span id="cb35-3"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="op">&gt;</span> a {</span>
+<span id="cb35-5"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="cn">#055778</span><span class="op">;</span></span>
+<span id="cb35-6"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb35-7"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="sourceCode" id="cb36"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb36-1"><a aria-hidden="true" tabindex="-1"></a>h2 {</span>
+<span id="cb36-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#32a1ce</span><span class="op">;</span></span>
+<span id="cb36-3"><a aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb36-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-5"><a aria-hidden="true" tabindex="-1"></a>h2 <span class="op">&gt;</span> a {</span>
+<span id="cb36-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#055778</span><span class="op">;</span></span>
+<span id="cb36-7"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://sass-lang.com/documentation/style-rules/#nesting" class="uri">https://sass-lang.com/documentation/style-rules/#nesting</a></p>
+</div>
+</section>
+<section id="sass-nested-rules-2" class="slide level2">
+<h2>SASS nested rules</h2>
+<p>Add organization to styling</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb37-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">.speech</span> {</span>
+<span id="cb37-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">background-color</span>: <span class="va">$theme-grey</span><span class="op">;</span></span>
+<span id="cb37-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding</span>: <span class="dv">1</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb37-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">margin-bottom</span>: <span class="dv">1</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb37-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-radius</span>: <span class="dv">15</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb37-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-style</span>: <span class="dv">solid</span><span class="op">;</span></span>
+<span id="cb37-7"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">border-width</span>: <span class="dv">5</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb37-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-9"><a aria-hidden="true" tabindex="-1"></a>  img {</span>
+<span id="cb37-10"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">margin-bottom</span>: <span class="op">-</span><span class="dv">0.5</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb37-11"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">padding-right</span>: <span class="dv">0.5</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb37-12"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">transform</span>: scaleX(<span class="op">-</span><span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb37-13"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb37-14"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-15"><a aria-hidden="true" tabindex="-1"></a>  <span class="op">&amp;</span><span class="fu">.right</span> {</span>
+<span id="cb37-16"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">text-align</span>: <span class="dv">right</span><span class="op">;</span></span>
+<span id="cb37-17"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-18"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-19"><a aria-hidden="true" tabindex="-1"></a>    img {</span>
+<span id="cb37-20"><a aria-hidden="true" tabindex="-1"></a>      <span class="kw">padding-left</span>: <span class="dv">0.5</span><span class="dt">em</span><span class="op">;</span></span>
+<span id="cb37-21"><a aria-hidden="true" tabindex="-1"></a>      <span class="kw">transform</span>: scaleX(<span class="dv">1</span>)<span class="op">;</span></span>
+<span id="cb37-22"><a aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb37-23"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb37-24"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-25"><a aria-hidden="true" tabindex="-1"></a>  <span class="op">&amp;</span><span class="fu">.pink</span> {</span>
+<span id="cb37-26"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span>: <span class="va">$theme-pink</span><span class="op">;</span></span>
+<span id="cb37-27"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">border-color</span>: <span class="fu">darken(</span><span class="va">$theme-pink</span><span class="op">,</span> <span class="dv">20</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb37-28"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb37-29"><a aria-hidden="true" tabindex="-1"></a>  <span class="op">&amp;</span><span class="fu">.brown</span> {</span>
+<span id="cb37-30"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span>: <span class="va">$theme-brown</span><span class="op">;</span></span>
+<span id="cb37-31"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">border-color</span>: <span class="fu">darken(</span><span class="va">$theme-brown</span><span class="op">,</span> <span class="dv">20</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb37-32"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb37-33"><a aria-hidden="true" tabindex="-1"></a>  <span class="op">&amp;</span><span class="fu">.blue</span> {</span>
+<span id="cb37-34"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span>: <span class="va">$theme-blue</span><span class="op">;</span></span>
+<span id="cb37-35"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">border-color</span>: <span class="fu">darken(</span><span class="va">$theme-blue</span><span class="op">,</span> <span class="dv">20</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb37-36"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb37-37"><a aria-hidden="true" tabindex="-1"></a>  <span class="op">&amp;</span><span class="fu">.purple</span> {</span>
+<span id="cb37-38"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">background-color</span>: <span class="va">$theme-purple</span><span class="op">;</span></span>
+<span id="cb37-39"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">border-color</span>: <span class="fu">darken(</span><span class="va">$theme-purple</span><span class="op">,</span> <span class="dv">20</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb37-40"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb37-41"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="footer">
+<p><a href="https://sass-lang.com/documentation/style-rules/#nesting" class="uri">https://sass-lang.com/documentation/style-rules/#nesting</a></p>
+</div>
+</section>
+<section id="sass-mixins" class="slide level2">
+<h2>SASS mixins</h2>
+<p>Avoid duplication of style</p>
+<div class="columns">
+<div class="column">
+<div class="sourceCode" id="cb38"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb38-1"><a aria-hidden="true" tabindex="-1"></a><span class="im">@mixin</span> <span class="fu">padding-small</span> {</span>
+<span id="cb38-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-bottom</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb38-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-left</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb38-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-right</span>: <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb38-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-top</span>: <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb38-6"><a aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb38-7"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-8"><a aria-hidden="true" tabindex="-1"></a>h2 {</span>
+<span id="cb38-9"><a aria-hidden="true" tabindex="-1"></a>  <span class="im">@include</span> padding-small<span class="op">;</span></span>
+<span id="cb38-10"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">#32a1ce</span><span class="op">;</span></span>
+<span id="cb38-11"><a aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb38-12"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-13"><a aria-hidden="true" tabindex="-1"></a>h3 {</span>
+<span id="cb38-14"><a aria-hidden="true" tabindex="-1"></a>  <span class="im">@include</span> padding-small<span class="op">;</span></span>
+<span id="cb38-15"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">#32cebc</span><span class="op">;</span></span>
+<span id="cb38-16"><a aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb38-17"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-18"><a aria-hidden="true" tabindex="-1"></a>h4 {</span>
+<span id="cb38-19"><a aria-hidden="true" tabindex="-1"></a>  <span class="im">@include</span> padding-small<span class="op">;</span></span>
+<span id="cb38-20"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">#83ce32</span><span class="op">;</span></span>
+<span id="cb38-21"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="sourceCode" id="cb39"><pre class="sourceCode css code-with-copy"><code class="sourceCode css"><span id="cb39-1"><a aria-hidden="true" tabindex="-1"></a>h2 {</span>
+<span id="cb39-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-bottom</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb39-3"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-left</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb39-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-right</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb39-5"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-top</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb39-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#32a1ce</span><span class="op">;</span></span>
+<span id="cb39-7"><a aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb39-8"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a aria-hidden="true" tabindex="-1"></a>h3 {</span>
+<span id="cb39-10"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-bottom</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb39-11"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-left</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb39-12"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-right</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb39-13"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-top</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb39-14"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#32cebc</span><span class="op">;</span></span>
+<span id="cb39-15"><a aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb39-16"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-17"><a aria-hidden="true" tabindex="-1"></a>h4 {</span>
+<span id="cb39-18"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-bottom</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb39-19"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-left</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb39-20"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-right</span><span class="ch">:</span> <span class="dv">20</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb39-21"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">padding-top</span><span class="ch">:</span> <span class="dv">10</span><span class="dt">px</span><span class="op">;</span></span>
+<span id="cb39-22"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span><span class="ch">:</span> <span class="cn">#83ce32</span><span class="op">;</span></span>
+<span id="cb39-23"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://sass-lang.com/documentation/at-rules/mixin/" class="uri">https://sass-lang.com/documentation/at-rules/mixin/</a></p>
+</div>
+</section>
+<section id="sass-functions" class="slide level2">
+<h2>SASS functions</h2>
+<p>Many different built-in functions</p>
+<div class="columns">
+<div class="column">
+<div class="sourceCode" id="cb40"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb40-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">$favorite-blue</span>: <span class="cn">#32a1ce</span><span class="op">;</span></span>
+<span id="cb40-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-3"><a aria-hidden="true" tabindex="-1"></a>h2 {</span>
+<span id="cb40-4"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="va">$favorite-blue</span><span class="op">;</span></span>
+<span id="cb40-5"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="op">&gt;</span> a {</span>
+<span id="cb40-7"><a aria-hidden="true" tabindex="-1"></a>    <span class="kw">color</span>: <span class="fu">darken(</span><span class="va">$favorite-blue</span><span class="fu">)</span><span class="op">;</span></span>
+<span id="cb40-8"><a aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb40-9"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="sourceCode" id="cb41"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb41-1"><a aria-hidden="true" tabindex="-1"></a>h2 {</span>
+<span id="cb41-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">#32a1ce</span><span class="op">;</span></span>
+<span id="cb41-3"><a aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb41-4"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a aria-hidden="true" tabindex="-1"></a>h2 <span class="op">&gt;</span> a {</span>
+<span id="cb41-6"><a aria-hidden="true" tabindex="-1"></a>  <span class="kw">color</span>: <span class="cn">#055778</span><span class="op">;</span></span>
+<span id="cb41-7"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://sass-lang.com/documentation/modules/" class="uri">https://sass-lang.com/documentation/modules/</a></p>
+</div>
+</section>
+<section id="design-principles" class="slide level2">
+<h2>Design principles</h2>
+<p>We will assume you have good content, and it is ordered appropriately with different pages and navigation</p>
+<p><br></p>
+<div class="fragment">
+<p>What principles can we employ to make the most out of your website</p>
+</div>
+<p><br></p>
+<div class="fragment">
+<p>If the user thinks “I wonder which button to click”, something bad happened</p>
+</div>
+</section>
+<section id="what-is-its-purpose" class="slide level2">
+<h2>What is its purpose?</h2>
+<p>When designing a website we have to keep the audience in mind</p>
+<p>It all depends on the audience and how you want them to interact with it</p>
+<p><br></p>
+<div class="fragment">
+<p>academic websites will be different than business sites</p>
+</div>
+<p><br></p>
+<div class="fragment">
+<div class="columns">
+<div class="column">
+<p><strong>Academic</strong></p>
+<p>Information</p>
+</div><div class="column">
+<p><strong>Business</strong></p>
+<p>Call to action</p>
+</div>
+</div>
+<p><!-- end columns --></p>
+</div>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+
+<img data-src="images/netflix.png" class="r-stretch"></section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+
+<img data-src="images/academic.png" class="r-stretch"></section>
+<section id="hicks-law" class="slide level2">
+<h2>Hick’s Law</h2>
+<blockquote>
+<p>Every additional choice increases the time required to make a decision.</p>
+</blockquote>
+<p><br></p>
+<div class="fragment">
+<p>A reminder to keep it simple</p>
+<p>Make it easy for your users to find what they want</p>
+</div>
+</section>
+<section id="readding-patterns" class="slide level2">
+<h2>Readding Patterns</h2>
+<div class="columns">
+<div class="column">
+<p>F-shaped and Z-shaped</p>
+<p><br></p>
+<p>Make sure all content follows a natural order</p>
+</div><div class="column">
+<div class="r-stack">
+<p><img data-src="images/f-shaped.png" class="fragment"></p>
+<p><img data-src="images/reading-pattern-meme.png" class="fragment"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="readding-patterns---headers-and-footers" class="slide level2">
+<h2>Readding Patterns - headers and footers</h2>
+<p>Discussion:</p>
+<p>Knowing what we know now, what elements are good to place in the header and footer?</p>
+</section>
+<section id="negative-space" class="slide level2">
+<h2>Negative Space</h2>
+<p>You don’t need to fill all the screen real estate</p>
+<p>we typically also have a limited text width for ease of reading</p>
+</section>
+<section id="negative-space-1" class="slide level2">
+<h2>Negative Space</h2>
+
+<img data-src="images/text-width.png" class="r-stretch"></section>
+<section id="negative-space-2" class="slide level2">
+<h2>Negative Space</h2>
+
+<img data-src="images/no-text-width.png" class="r-stretch"></section>
+<section id="consistent-design" class="slide level2">
+<h2>Consistent Design</h2>
+<p>We look at similarities and differences, if an element looks different than the rest, we are going to assume that it matters</p>
+<p>using principled styling will alleviate many of these problems</p>
+</section>
+<section id="choosing-colors" class="slide level2">
+<h2>Choosing colors</h2>
+<p>The colors can come from a lot of different places</p>
+<ul>
+<li>corporate guidelines</li>
+<li>you</li>
+<li>from online inspiration (Pinterest)</li>
+</ul>
+</section>
+<section id="setting-up-a-color-theme" class="slide level2">
+<h2>Setting up a color theme</h2>
+<p>We can create a color palette in SASS by using a set of environment variables.</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb42-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">$theme-white</span>: <span class="cn">#FFFFFF</span><span class="op">;</span></span>
+<span id="cb42-2"><a aria-hidden="true" tabindex="-1"></a><span class="va">$theme-black</span>: <span class="cn">#222222</span><span class="op">;</span></span>
+<span id="cb42-3"><a aria-hidden="true" tabindex="-1"></a><span class="va">$theme-blue</span>: <span class="cn">#5538f8</span><span class="op">;</span></span>
+<span id="cb42-4"><a aria-hidden="true" tabindex="-1"></a><span class="va">$theme-red</span>: <span class="cn">#df4747</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These will then be used throughout the</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode scss code-with-copy"><code class="sourceCode scss"><span id="cb43-1"><a aria-hidden="true" tabindex="-1"></a><span class="va">$link-color</span>: <span class="va">$theme-blue</span><span class="op">;</span></span>
+<span id="cb43-2"><a aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-3"><a aria-hidden="true" tabindex="-1"></a>$<span class="va">$sidebar-hl</span>: <span class="fu">lighten(</span><span class="va">$theme-blue</span><span class="op">,</span> <span class="dv">0.5</span><span class="fu">)</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="using-color-on-websites" class="slide level2">
+<h2>Using color on websites</h2>
+<p>Be mindful when using colors</p>
+<p>60-30-10 rule</p>
+<h3 id="primary-color">60% - Primary color</h3>
+<ul>
+<li>typically background</li>
+</ul>
+<h3 id="secondary-color">30% - Secondary color</h3>
+<ul>
+<li>text and elements</li>
+</ul>
+<h3 id="accent-color">10% - Accent color</h3>
+<ul>
+<li>highlights, buttons</li>
+</ul>
+</section>
+<section id="deviations" class="slide level2">
+<h2>60-30-10 deviations</h2>
+<p>As with all things, this is not a hard and fast rule.</p>
+<p>you can use fewer or more colors</p>
+<ul>
+<li>https://codegoda.io/</li>
+</ul>
+<p>notice that they use their colors carefully and consistently</p>
+</section>
+<section id="choosing-fonts" class="slide level2">
+<h2>Choosing fonts</h2>
+<p>Use readable and web-friendly fonts - common fonts are by definition readable as they are familiar - fonts are designed to be used in different areas, optimize for web fonts - don’t pick too many fonts</p>
+</section>
+<section id="maintaining-accessibility" class="slide level2">
+<h2>Maintaining accessibility</h2>
+<p>What is web accessibility?</p>
+<blockquote>
+<p>Web accessibility is the practice of creating websites that are usable for all visitors regardless of a disability or impairment. To fulfill web accessibility best practices, you must create a site that complies with certain design and development guidelines that ensure your site is set up to accommodate folks with disabilities. This ensures that all users have the same or similar experience regardless of ability.</p>
+</blockquote>
+<div class="footer">
+<p><a href="https://blog.hubspot.com/website/web-accessibility" class="uri">https://blog.hubspot.com/website/web-accessibility</a></p>
+</div>
+</section>
+<section id="maintaining-accessibility-1" class="slide level2">
+<h2>Maintaining accessibility</h2>
+<p>How do we do it?</p>
+<ul>
+<li><p>Avoid blinking/flashing content</p></li>
+<li><p>Maintain high color contrast when needed</p>
+<ul>
+<li><a href="https://colourcontrast.cc/" class="uri">https://colourcontrast.cc/</a></li>
+<li>color contrast varies based on font size</li>
+</ul></li>
+<li><p>Add alt-text to elements</p></li>
+<li><p>Ensure complete functionality via the keyboard</p>
+<ul>
+<li>should be handled by Quarto</li>
+</ul></li>
+</ul>
 
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
 </div>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -623,6 +1597,24 @@
         // clear code selection
         e.clearSelection();
       });
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -659,7 +1651,11 @@
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
