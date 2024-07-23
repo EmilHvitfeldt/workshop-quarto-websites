@@ -10,11 +10,21 @@ echo: false
 code-line-numbers: false
 ---
 
-# Let's Add a Page
+## Before we proceed...
 
-## Demo
+If you've published your site:
+
+Add your `site-url` to `_quarto.yml`, e.g. 
+
+```{.yaml filename="_quarto.yml"}
+website:
+  site-url: https://charlotte.quarto.pub/template-site
+```
+
+# Let's Add a Page!
 
 ::::: columns
+
 ::: column
 -   Create a new page: `/talks.qmd`
 
