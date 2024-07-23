@@ -22,7 +22,11 @@ Join the Discord: #workshop-quarto-websites
 
 ## Housekeeping
 
-## Code of Conduct {.smaller}
+* There are gender-neutral bathrooms located on levels 3, 4, 5, 6 & 7
+* There is a meditation/prayer room located in 503. Available Mon & Tues 7am - 7pm, and Wed 7am - 5pm.
+* The lactation room is located in 509, same timings as above.
+* Participants who do not wish to be photographed have red lanyards; please note everyone’s lanyard colors before taking a photo and respect their choices.
+* The Code of Conduct can be found at https://posit.co/code-of-conduct. Please review carefully. You can report Code of Conduct violations in person, by email, or by phone. Please see the policy linked above for contact information.
 
 ## Breaks
 
