@@ -128,9 +128,11 @@ quarto preview
 
 4.  Edit `title` and `subtitle` in the `index.qmd` YAML to reflect your site
 
-5.  Preview
+5.  Previews
 
 6.  What else is in `index.qmd`? Can you match the contents of `index.qmd` with contents of the webpage?
+
+{{< countdown "5:00" >}}
 
 ## `index.qmd` Components {.scrollable}
 
@@ -294,8 +296,6 @@ website:
     right:
       - text: Home
         href: index.qmd
-      - text: blog
-        href: blog.qmd
 
 format:
   html:
