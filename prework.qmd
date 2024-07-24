@@ -22,6 +22,14 @@ To publish your website you'll need an account on one of Quarto's publishing ven
 
 -   [GitHub](https://github.com) only **if you are already** a Git/GitHub user
 
+## Join the Workshop Discord Channel
+
+The Discord server will be available after August 8th:
+
+* [pos.it/conf-event-portal](http://pos.it/conf-event-portal): Login
+* Click on “Join Discord, the virtual networking platform!”
+* Browse Channels -> #workshop-quarto-websites
+
 ## Preparation
 
 There are a few things you might like to collect before arriving:
