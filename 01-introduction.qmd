@@ -64,6 +64,10 @@ Full schedule at: [pos.it/websites_24](https://pos.it/websites_24)
 
 ::: column
 ### Emil Hvitfeldt
+
+-   Quarto user for 2+ years
+-   Written some Quarto extensions
+-   R software engineer
 :::
 :::::
 
