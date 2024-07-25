@@ -1,5 +1,6 @@
 project:
   type: website
+  
 
 website:
   title: "Quarto Websites Workshop"
@@ -30,6 +31,6 @@ website:
 format:
   html:
     toc: true
-
-theme:
-  - website-styles.scss
+    theme:
+      - website-styles.scss
+      - cosmo
